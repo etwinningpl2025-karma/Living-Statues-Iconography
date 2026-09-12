@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Living Statues: Iconography of Sports from Antiquity to Modern Era</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #15375B;
+      --accent: #C5A059;
+      --bg: #FDFBF7;
+      --card-bg: #FFFFFF;
+      --text: #2D3748;
+      --muted: #64748B;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column; }
+
+    /* Navigasyon */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.1rem 6%;
+      background: #fff;
+      border-bottom: 1px solid #ECE7DE;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+    .brand { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700; color: var(--primary); text-decoration: none; cursor: pointer; }
+    .nav-right { display: flex; align-items: center; gap: 1.2rem; }
+    
+    .nav-links { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+    .nav-btn {
+      background: transparent;
+      border: none;
+      outline: none;
+      font-family: inherit;
+      color: #4A5568;
+      font-weight: 500;
+      font-size: 0.92rem;
+      padding: 0.45rem 0.8rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .nav-btn:hover { color: var(--primary); background: #f1f5f9; }
+    .nav-btn.active {
+      color: #fff;
+      background: var(--primary);
+      font-weight: 600;
+    }
+
+    .lang-switch {
+      background: #edf2f7;
+      border: 1px solid #cbd5e1;
+      border-radius: 20px;
+      padding: 5px 12px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--primary);
+      white-space: nowrap;
+    }
+
+    /* Sayfa Bölümleri */
+    .page-section {
+      display: none;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+    .page-section.active {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Hero / Home */
+    .hero-banner {
+      width: 100%;
+      background-color: #e2e8f0;
+      border-bottom: 3px solid var(--accent);
+    }
+    .hero-banner img {
+      width: 100%;
+      max-height: 480px;
+      object-fit: cover;
+      display: block;
+    }
+    .hero-text-wrap {
+      text-align: center;
+      padding: 3rem 1.5rem 2rem;
+      background: #fff;
+    }
+    .badge {
+      display: inline-block;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    .title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+    .subtitle {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      color: var(--muted);
+      font-size: 1.2rem;
+    }
+
+    /* Genel Konteyner */
+    .container { max-width: 1100px; margin: 0 auto; padding: 3.5rem 1.5rem; flex: 1; width: 100%; }
+    .section-head { text-align: center; margin-bottom: 3rem; }
+    .section-head h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--primary); margin-bottom: 0.5rem; }
+    .section-head p { color: var(--muted); font-size: 1rem; }
+
+    /* Izgara Kartları */
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.8rem; }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid #ECE7DE;
+      border-radius: 12px;
+      padding: 1.8rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+      display: flex;
+      flex-direction: column;
+    }
+    .card h3 { font-family: 'Playfair Display', serif; color: var(--primary); margin-bottom: 0.6rem; font-size: 1.25rem; }
+
+    /* Home Sayacı ve İstatistik Kartları */
+    .stats-container {
+      margin-top: 3.5rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid #ECE7DE;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+    .stat-card {
+      background: #ffffff;
+      border: 1px solid #ECE7DE;
+      border-radius: 14px;
+      padding: 1.8rem;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.3rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.3rem;
+    }
+    .stat-label {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.4rem;
+    }
+    .stat-subtext {
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+    .counter-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: #eef2f6;
+      color: var(--primary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+    }
+
+    /* Partners */
+    .partner-role {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      background: #eef2f6;
+      color: var(--primary);
+      padding: 3px 8px;
+      border-radius: 4px;
+      margin-bottom: 0.8rem;
+      align-self: flex-start;
+    }
+    .partner-school { font-weight: 600; color: var(--text); margin-bottom: 0.2rem; font-size: 1rem; }
+    .partner-country { font-size: 0.9rem; color: var(--muted); margin-bottom: 1.2rem; }
+    
+    .school-web-info {
+      margin-top: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .school-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #ffffff;
+      background: var(--primary);
+      text-decoration: none;
+      padding: 0.6rem 1rem;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+      align-self: flex-start;
+    }
+    .school-link:hover {
+      background: #0d233a;
+      transform: translateY(-2px);
+    }
+    .school-url-text {
+      font-size: 0.8rem;
+      color: var(--muted);
+      word-break: break-all;
+    }
+
+    /* Padlet Bölümü */
+    .padlet-wrapper {
+      margin-top: 4rem;
+      background: #ffffff;
+      border: 1px solid #ECE7DE;
+      border-radius: 16px;
+      padding: 2.2rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    }
+    .padlet-nav-tabs {
+      display: flex;
+      gap: 0.8rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 2px solid #ECE7DE;
+      padding-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+    .padlet-tab-btn {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      padding: 0.65rem 1.3rem;
+      border-radius: 30px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: #4a5568;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .padlet-tab-btn:hover {
+      background: #e2e8f0;
+      color: var(--primary);
+    }
+    .padlet-tab-btn.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+    }
+    .padlet-pane { display: none; }
+    .padlet-pane.active { display: block; }
+    .padlet-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.2rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .padlet-header h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--primary);
+    }
+    .padlet-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--primary);
+      text-decoration: none;
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+    }
+    .padlet-btn:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+    .padlet-frame {
+      width: 100%;
+      height: 600px;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      display: block;
+    }
+
+    /* Activities */
+    .month-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      background: var(--primary);
+      color: #ffffff;
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-bottom: 0.8rem;
+      align-self: flex-start;
+    }
+    .activity-list { list-style: none; padding: 0; margin-top: 0.5rem; }
+    .activity-list li {
+      position: relative;
+      padding-left: 1.3rem;
+      margin-bottom: 0.6rem;
+      font-size: 0.92rem;
+      color: var(--text);
+      line-height: 1.5;
+    }
+    .activity-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: bold;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    /* YENİ GELİŞMİŞ GALERİ BÖLÜMÜ */
+    .gallery-filter-wrap {
+      display: flex;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .gallery-filter-btn {
+      background: #fff;
+      border: 1px solid #cbd5e1;
+      padding: 0.55rem 1.2rem;
+      border-radius: 24px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #4a5568;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .gallery-filter-btn:hover {
+      background: #f1f5f9;
+      color: var(--primary);
+    }
+    .gallery-filter-btn.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+    }
+    .art-card {
+      background: #ffffff;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid #ECE7DE;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .art-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    }
+    .art-visual {
+      background: linear-gradient(135deg, #15375B 0%, #2a4365 100%);
+      color: #FDFBF7;
+      height: 190px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1.5rem;
+      position: relative;
+    }
+    .art-visual-icon { font-size: 2.6rem; margin-bottom: 0.4rem; }
+    .art-origin-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(197, 160, 89, 0.9);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .art-details { padding: 1.5rem; display: flex; flex-direction: column; flex: 1; }
+    .art-details h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--primary);
+      margin-bottom: 0.4rem;
+    }
+    .art-meta {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .art-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.5; margin-bottom: 1rem; }
+    .art-tag-list { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: auto; }
+    .art-tag {
+      background: #f1f5f9;
+      color: var(--primary);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+
+    /* eSafety */
+    .esafety-banner {
+      background: linear-gradient(135deg, #15375B 0%, #1e4d7e 100%);
+      color: white;
+      border-radius: 16px;
+      padding: 2.5rem;
+      margin-bottom: 3rem;
+      text-align: center;
+      border: 2px solid var(--accent);
+    }
+    .esafety-banner h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 0.8rem; color: #FDFBF7; }
+    .esafety-banner p { color: #E2E8F0; max-width: 800px; margin: 0 auto; font-size: 1rem; }
+
+    .canva-box {
+      margin-top: 3.5rem;
+      background: #ffffff;
+      border-radius: 16px;
+      border: 1px solid #ECE7DE;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .canva-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      background: linear-gradient(135deg, #00C4CC, #7D2AE8);
+      color: #fff;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 0.8rem;
+      text-transform: uppercase;
+    }
+    .canva-content { max-width: 600px; }
+    .canva-content h3 { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--primary); margin-bottom: 0.5rem; }
+    .canva-content p { color: var(--muted); font-size: 0.95rem; }
+    .canva-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: linear-gradient(135deg, #00C4CC, #7D2AE8);
+      color: #fff;
+      text-decoration: none;
+      padding: 0.85rem 1.8rem;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(125, 42, 232, 0.25);
+    }
+    .canva-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(125, 42, 232, 0.35);
+    }
+
+    /* Connects */
+    .connects-wrap {
+      background: #ffffff;
+      border-radius: 20px;
+      border: 1px solid #ECE7DE;
+      padding: 3rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3.5rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+      margin-bottom: 3.5rem;
+    }
+    .qr-box {
+      text-align: center;
+      background: #faf8f5;
+      padding: 1.2rem;
+      border-radius: 16px;
+      border: 1px solid #ECE7DE;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.04);
+    }
+    .qr-box img {
+      width: 200px;
+      height: 200px;
+      border-radius: 12px;
+      display: block;
+      margin: 0 auto;
+    }
+    .connects-details { max-width: 480px; }
+    .connects-details h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--primary); margin-bottom: 0.8rem; }
+    .connects-details p { color: var(--muted); margin-bottom: 1.5rem; font-size: 0.98rem; }
+    .buttons-wrap { display: flex; flex-wrap: wrap; gap: 0.8rem; }
+    .ig-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+      color: white;
+      text-decoration: none;
+      padding: 0.75rem 1.4rem;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    .mail-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--primary);
+      color: white;
+      text-decoration: none;
+      padding: 0.75rem 1.4rem;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2.2rem 1rem;
+      background: var(--primary);
+      color: #E2E8F0;
+      font-size: 0.9rem;
+      margin-top: auto;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    @media (max-width: 768px) {
+      nav { flex-direction: column; gap: 1rem; }
+      .nav-links { flex-wrap: wrap; justify-content: center; }
+      .connects-wrap { flex-direction: column; gap: 2rem; text-align: center; }
+      .buttons-wrap { justify-content: center; }
+      .padlet-frame { height: 450px; }
+      .canva-box { text-align: center; justify-content: center; }
+      .stats-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigasyon -->
+  <nav>
+    <div class="brand" onclick="showSection('home')">🏛️ Living Statues</div>
+    <div class="nav-right">
+      <div class="nav-links">
+        <button class="nav-btn active" onclick="showSection('home')" data-en="Home" data-tr="Ana Sayfa">Home</button>
+        <button class="nav-btn" onclick="showSection('about')" data-en="About" data-tr="Hakkında">About</button>
+        <button class="nav-btn" onclick="showSection('partners')" data-en="Partners" data-tr="Ortaklar">Partners</button>
+        <button class="nav-btn" onclick="showSection('activities')" data-en="Activities" data-tr="Etkinlikler">Activities</button>
+        <button class="nav-btn" onclick="showSection('gallery')" data-en="Gallery" data-tr="Galeri">Gallery</button>
+        <button class="nav-btn" onclick="showSection('esafety')" data-en="eSafety" data-tr="e-Güvenlik">eSafety</button>
+        <button class="nav-btn" onclick="showSection('connects')" data-en="Connects" data-tr="İletişim">Connects</button>
+      </div>
+      <button class="lang-switch" onclick="toggleLanguage()">TR / EN</button>
+    </div>
+  </nav>
+
+  <!-- 1. HOME BÖLÜMÜ -->
+  <main id="home" class="page-section active">
+    <div class="hero-banner">
+      <img src="banner.png" alt="Living Statues Banner">
+    </div>
+    <div class="hero-text-wrap">
+      <span class="badge" data-en="eTwinning Project (Age: 14-18)" data-tr="eTwinning Projesi (Yaş: 14-18)">eTwinning Project (Age: 14-18)</span>
+      <h1 class="title">Living Statues</h1>
+      <h2 class="subtitle" data-en="Iconography of Sports from Antiquity to Modern Era" data-tr="Antik Çağ'dan Modern Döneme Spor İkonografisi">Iconography of Sports from Antiquity to Modern Era</h2>
+    </div>
+    
+    <div class="container" style="padding-top: 1rem;">
+      <div class="grid">
+        <div class="card" onclick="showSection('about')" style="cursor: pointer; text-align: center;">
+          <h3 data-en="📖 Discover Our Project" data-tr="📖 Projeyi Keşfedin">📖 Discover Our Project</h3>
+          <p data-en="Learn about our interdisciplinary curriculum integrating physical education, arts, anatomy, and digital media." data-tr="Beden eğitimi, sanat, anatomi ve dijital medyayı birleştiren disiplinlerarası programımızı öğrenin.">Learn about our interdisciplinary curriculum integrating physical education, arts, anatomy, and digital media.</p>
+        </div>
+        <div class="card" onclick="showSection('activities')" style="cursor: pointer; text-align: center;">
+          <h3 data-en="🗓️ 4-Month Roadmap" data-tr="🗓️ 4 Aylık Plan">🗓️ 4-Month Roadmap</h3>
+          <p data-en="Explore our step-by-step tasks from orientation to the final 3D virtual museum exhibition." data-tr="Tanışmadan 3D sanal müze sergisine kadar adım adım uygulama takvimimizi inceleyin.">Explore our step-by-step tasks from orientation to the final 3D virtual museum exhibition.</p>
+        </div>
+        <div class="card" onclick="showSection('esafety')" style="cursor: pointer; text-align: center;">
+          <h3 data-en="🛡️ eSafety & Ethics" data-tr="🛡️ e-Güvenlik & Etik">🛡️ eSafety & Ethics</h3>
+          <p data-en="Discover our digital ethics, copyright, and student privacy policies in compliance with eTwinning standards." data-tr="eTwinning standartlarıyla uyumlu dijital etik, telif hakları ve öğrenci gizliliği ilkelerimizi keşfedin.">Discover our digital ethics, copyright, and student privacy policies in compliance with eTwinning standards.</p>
+        </div>
+      </div>
+
+      <!-- Ziyaretçi ve İstatistik Kartları -->
+      <div class="stats-container">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number">3</div>
+            <div class="stat-label" data-en="Countries" data-tr="Ülke">Countries</div>
+            <div class="stat-subtext">🇹🇷 Türkiye • 🇷🇴 Romania • 🇷🇸 Serbia</div>
+          </div>
+
+          <div class="stat-card" onclick="showSection('partners')" style="cursor: pointer;">
+            <div class="stat-number">5</div>
+            <div class="stat-label" data-en="Total Partners" data-tr="Toplam Ortak">Total Partners</div>
+            <div class="stat-subtext" data-en="Coordinating Schools & Educators" data-tr="Koordinatör Okullar ve Eğitimciler">Coordinating Schools & Educators</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-number" id="visitor-count">1,248</div>
+            <div class="stat-label" data-en="Total Visitors" data-tr="Toplam Ziyaretçi">Total Visitors</div>
+            <div class="counter-badge">
+              🟢 <span data-en="Live Visitor Tracker" data-tr="Canlı Ziyaretçi Sayacı">Live Visitor Tracker</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- 2. ABOUT BÖLÜMÜ -->
+  <section id="about" class="page-section container">
+    <div class="section-head">
+      <h2 data-en="About the Project" data-tr="Proje Hakkında">About the Project</h2>
+      <p data-en="Integration: Physical Education, Arts, Anatomy & Digital Tech" data-tr="Entegrasyon: Beden Eğitimi, Sanat, Anatomi ve Dijital Teknolojiler">Integration: Physical Education, Arts, Anatomy & Digital Tech</p>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3 data-en="🏺 Sculptural Iconography" data-tr="🏺 Heykel İkonografisi">🏺 Sculptural Iconography</h3>
+        <p data-en="Investigating classical sports sculptures, aesthetic ideals, and the representation of athletic motion across European history." data-tr="Klasik spor heykellerini, dönemin estetik ideallerini ve Avrupa tarihindeki atletik hareket tasvirlerini inceliyoruz.">
+          Investigating classical sports sculptures, aesthetic ideals, and the representation of athletic motion across European history.
+        </p>
+      </div>
+      <div class="card">
+        <h3 data-en="⚡ Functional Anatomy" data-tr="⚡ Fonksiyonel Anatomi">⚡ Functional Anatomy</h3>
+        <p data-en="Analyzing agonist/antagonist muscle groups, joint angles, center of gravity, and postural balance in physical education." data-tr="Beden eğitimi derslerinde agonist/antagonist kas gruplarını, eklem açılarını, ağırlık merkezini ve postürel dengeyi analiz ediyoruz.">
+          Analyzing agonist/antagonist muscle groups, joint angles, center of gravity, and postural balance in physical education.
+        </p>
+      </div>
+      <div class="card">
+        <h3 data-en="🎭 Living Tableaux (Tableau Vivant)" data-tr="🎭 Canlı Tablo (Tableau Vivant)">🎭 Living Tableaux (Tableau Vivant)</h3>
+        <p data-en="Students recreate historical statues with precise body posture, dual-layer visuals, and interactive multimedia overlays." data-tr="Öğrencilerimiz tarihi heykelleri hassas beden duruşu, çift katmanlı görseller ve interaktif dijital etiketlerle canlandırıyor.">
+          Students recreate historical statues with precise body posture, dual-layer visuals, and interactive multimedia overlays.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. PARTNERS BÖLÜMÜ -->
+  <section id="partners" class="page-section container">
+    <div class="section-head">
+      <h2 data-en="Project Partners & Community" data-tr="Proje Ortakları ve Topluluğumuz">Project Partners & Community</h2>
+      <p data-en="Coordinating teachers, partner institutions, and collaborative Padlet boards" data-tr="Koordinatör öğretmenler, ortak okullar ve etkileşimli Padlet panolarımız">Coordinating teachers, partner institutions, and collaborative Padlet boards</p>
+    </div>
+
+    <!-- Ortak Kartları -->
+    <div class="grid">
+      <div class="card">
+        <span class="partner-role" data-en="Teacher Administrator / Co-Founder" data-tr="Kurucu Ortak / Yönetici">Teacher Administrator / Co-Founder</span>
+        <h3>MEDİHA TABAK</h3>
+        <p class="partner-school" data-en="Haydarpaşa High School" data-tr="Haydarpaşa Lisesi">Haydarpaşa High School</p>
+        <p class="partner-country" data-en="🇹🇷 Turkey" data-tr="🇹🇷 Türkiye">🇹🇷 Turkey</p>
+        <div class="school-web-info">
+          <a href="https://haydarpasalisesi.meb.k12.tr/" target="_blank" rel="noopener noreferrer" class="school-link">🌐 <span data-en="Open School Website" data-tr="Okul Sitesini Aç">Open School Website</span></a>
+          <span class="school-url-text">https://haydarpasalisesi.meb.k12.tr/</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="partner-role" data-en="Teacher Administrator / Co-Founder" data-tr="Kurucu Ortak / Yönetici">Teacher Administrator / Co-Founder</span>
+        <h3>Suzana Tomić</h3>
+        <p class="partner-school" data-en="Second Kragujevac Gymnasium" data-tr="Druga Kragujevac Lisesi (Друга крагујевачка гимназија)">Second Kragujevac Gymnasium</p>
+        <p class="partner-country" data-en="🇷🇸 Serbia" data-tr="🇷🇸 Sırbistan">🇷🇸 Serbia</p>
+        <div class="school-web-info">
+          <a href="https://drugagimnazija.edu.rs/" target="_blank" rel="noopener noreferrer" class="school-link">🌐 <span data-en="Open School Website" data-tr="Okul Sitesini Aç">Open School Website</span></a>
+          <span class="school-url-text">https://drugagimnazija.edu.rs/</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="partner-role" data-en="Teacher / Partner" data-tr="Öğretmen / Ortak">Teacher / Partner</span>
+        <h3>Elvan BAKIRCI PEKEL</h3>
+        <p class="partner-school" data-en="Didim Yenihisar Anatolian High School" data-tr="Didim Yenihisar Anadolu Lisesi">Didim Yenihisar Anatolian High School</p>
+        <p class="partner-country" data-en="🇹🇷 Turkey" data-tr="🇹🇷 Türkiye">🇹🇷 Turkey</p>
+        <div class="school-web-info">
+          <a href="https://yenihisaral.meb.k12.tr/" target="_blank" rel="noopener noreferrer" class="school-link">🌐 <span data-en="Open School Website" data-tr="Okul Sitesini Aç">Open School Website</span></a>
+          <span class="school-url-text">https://yenihisaral.meb.k12.tr/</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="partner-role" data-en="Teacher / Partner" data-tr="Öğretmen / Ortak">Teacher / Partner</span>
+        <h3>Anisoara Taru</h3>
+        <p class="partner-school" data-en="Sports High School of Galați (LPS Galați)" data-tr="Galați Spor Lisesi (Liceul cu Program Sportiv)">Sports High School of Galați (LPS Galați)</p>
+        <p class="partner-country" data-en="🇷🇴 Romania" data-tr="🇷🇴 Romanya">🇷🇴 Romania</p>
+        <div class="school-web-info">
+          <a href="https://lpsgalati.ro/nou/" target="_blank" rel="noopener noreferrer" class="school-link">🌐 <span data-en="Open School Website" data-tr="Okul Sitesini Aç">Open School Website</span></a>
+          <span class="school-url-text">https://lpsgalati.ro/nou/</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="partner-role" data-en="Teacher / Partner" data-tr="Öğretmen / Ortak">Teacher / Partner</span>
+        <h3>Aysel Beyza Ata</h3>
+        <p class="partner-school" data-en="Haydarpaşa High School" data-tr="Haydarpaşa Lisesi">Haydarpaşa High School</p>
+        <p class="partner-country" data-en="🇹🇷 Turkey" data-tr="🇹🇷 Türkiye">🇹🇷 Turkey</p>
+        <div class="school-web-info">
+          <a href="https://haydarpasalisesi.meb.k12.tr/" target="_blank" rel="noopener noreferrer" class="school-link">🌐 <span data-en="Open School Website" data-tr="Okul Sitesini Aç">Open School Website</span></a>
+          <span class="school-url-text">https://haydarpasalisesi.meb.k12.tr/</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 Canlı Padlet Sekmesi -->
+    <div class="padlet-wrapper">
+      <div class="padlet-nav-tabs">
+        <button class="padlet-tab-btn active" onclick="switchPadlet('schools')" data-en="🏫 Meet Our Partner Schools" data-tr="🏫 Okullarımızla Tanışın">
+          🏫 Meet Our Partner Schools
+        </button>
+        <button class="padlet-tab-btn" onclick="switchPadlet('teachers')" data-en="👩‍🏫 Meet Our Teachers" data-tr="👩‍🏫 Öğretmenlerimizle Tanışın">
+          👩‍🏫 Meet Our Teachers
+        </button>
+        <button class="padlet-tab-btn" onclick="switchPadlet('students')" data-en="🎓 Meet Our Students" data-tr="🎓 Öğrencilerimizle Tanışın">
+          🎓 Meet Our Students
+        </button>
+      </div>
+
+      <div id="padlet-schools" class="padlet-pane active">
+        <div class="padlet-header">
+          <div>
+            <h3 data-en="📌 Meet Our Partner Schools (Official Padlet)" data-tr="📌 Okullarımızla Tanışın (Resmi Padlet)">📌 Meet Our Partner Schools (Official Padlet)</h3>
+            <p style="color: var(--muted); font-size: 0.92rem; margin-top: 0.2rem;" data-en="Discover historical facts, facilities, and promotional materials from all partner schools." data-tr="Tüm ortak okullarımızın tarihçesini, spor alanlarını ve okul tanıtımlarını doğrudan inceleyin.">
+              Discover historical facts, facilities, and promotional materials from all partner schools.
+            </p>
+          </div>
+          <a href="https://padlet.com/medihatbk/meet-our-partner-schools-living-statues-s023e3zh46jhz2yatd86" target="_blank" rel="noopener noreferrer" class="padlet-btn">
+            ↗️ <span data-en="Open in Full Screen" data-tr="Tam Ekranda Aç">Open in Full Screen</span>
+          </a>
+        </div>
+        <iframe class="padlet-frame" src="https://padlet.com/embed/s023e3zh46jhz2yatd86" allow="camera;microphone;geolocation" frameborder="0"></iframe>
+      </div>
+
+      <div id="padlet-teachers" class="padlet-pane">
+        <div class="padlet-header">
+          <div>
+            <h3 data-en="📌 Meet Our Teachers (Official Padlet)" data-tr="📌 Öğretmenlerimizle Tanışın (Resmi Padlet)">📌 Meet Our Teachers (Official Padlet)</h3>
+            <p style="color: var(--muted); font-size: 0.92rem; margin-top: 0.2rem;" data-en="Explore introductions, messages, and collaborative bios from our project teachers." data-tr="Proje öğretmenlerimizin tanıtımlarını, mesajlarını ve biyografilerini doğrudan inceleyin.">
+              Explore introductions, messages, and collaborative bios from our project teachers.
+            </p>
+          </div>
+          <a href="https://padlet.com/medihatbk/meet-our-teachers-living-statues-s023e3qi4quhl9eoa8ax" target="_blank" rel="noopener noreferrer" class="padlet-btn">
+            ↗️ <span data-en="Open in Full Screen" data-tr="Tam Ekranda Aç">Open in Full Screen</span>
+          </a>
+        </div>
+        <iframe class="padlet-frame" src="https://padlet.com/embed/s023e3qi4quhl9eoa8ax" allow="camera;microphone;geolocation" frameborder="0"></iframe>
+      </div>
+
+      <div id="padlet-students" class="padlet-pane">
+        <div class="padlet-header">
+          <div>
+            <h3 data-en="📌 Meet Our Students (Official Padlet)" data-tr="📌 Öğrencilerimizle Tanışın (Resmi Padlet)">📌 Meet Our Students (Official Padlet)</h3>
+            <p style="color: var(--muted); font-size: 0.92rem; margin-top: 0.2rem;" data-en="Meet participating international students across Turkey, Serbia, and Romania sharing their greetings and interests." data-tr="Türkiye, Sırbistan ve Romanya'daki katılımcı öğrencilerin mesajlarını, avatarlarını ve ilgi alanlarını keşfedin.">
+              Meet participating international students across Turkey, Serbia, and Romania sharing their greetings and interests.
+            </p>
+          </div>
+          <a href="https://padlet.com/medihatbk/meet-our-students-living-statues-s023g7rgrb5osn9l2ctj" target="_blank" rel="noopener noreferrer" class="padlet-btn">
+            ↗️ <span data-en="Open in Full Screen" data-tr="Tam Ekranda Aç">Open in Full Screen</span>
+          </a>
+        </div>
+        <iframe class="padlet-frame" src="https://padlet.com/embed/s023g7rgrb5osn9l2ctj" allow="camera;microphone;geolocation" frameborder="0"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. ACTIVITIES BÖLÜMÜ -->
+  <section id="activities" class="page-section container">
+    <div class="section-head">
+      <h2 data-en="Detailed Roadmap & Activity Plan (4 Months)" data-tr="Detaylı Yol Haritası ve Etkinlik Planı (4 Ay)">Detailed Roadmap & Activity Plan (4 Months)</h2>
+      <p data-en="Step-by-step implementation from sculptural research to virtual museum" data-tr="Heykel araştırmalarından 3D sanal müzeye adım adım uygulama takvimi">Step-by-step implementation from sculptural research to virtual museum</p>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <span class="month-badge" data-en="Month 1" data-tr="1. Ay">Month 1</span>
+        <h3 data-en="Orientation & Sculptural Iconography" data-tr="Tanışma ve Spor İkonografisi">Orientation & Sculptural Iconography</h3>
+        <ul class="activity-list">
+          <li data-en="Student & partner onboarding on TwinSpace / Padlet." data-tr="TwinSpace ve Padlet üzerinde öğrenci/okul tanışmaları.">Student & partner onboarding on TwinSpace / Padlet.</li>
+          <li data-en="Formation of transnational mixed student teams." data-tr="Uluslararası karma öğrenci takımlarının kurulması.">Formation of transnational mixed student teams.</li>
+          <li data-en="Research on historical athletic sculptures (Discobolus, Borghese Gladiator, Olympic art)." data-tr="Tarihi atletik heykel araştırmaları (Disk Atan Atlet, Gladyatörler, Olimpiyat sanatı).">Research on historical athletic sculptures (Discobolus, Borghese Gladiator, Olympic art).</li>
+          <li data-en="Publishing art history & aesthetic ideals cards." data-tr="Sanat tarihi ve dönemin atletik idealleri bilgi kartları.">Publishing art history & aesthetic ideals cards.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <span class="month-badge" data-en="Month 2" data-tr="2. Ay">Month 2</span>
+        <h3 data-en="Functional Anatomy & Postural Labs" data-tr="Fonksiyonel Anatomi ve Postür Analizi">Functional Anatomy & Postural Labs</h3>
+        <ul class="activity-list">
+          <li data-en="Mapping agonist/antagonist muscle groups and joint angles." data-tr="Çalışan kas grupları ve eklem açılarının haritalanması.">Mapping agonist/antagonist muscle groups and joint angles.</li>
+          <li data-en="Designing digital anatomical overlays via graphic apps." data-tr="Grafik programlarıyla heykel üzerine dijital anatomi katmanı tasarımı.">Designing digital anatomical overlays via graphic apps.</li>
+          <li data-en="Center of gravity & postural balance practical tests in P.E. classes." data-tr="Beden eğitimi derslerinde ağırlık merkezi ve postür denge testleri.">Center of gravity & postural balance practical tests in P.E. classes.</li>
+          <li data-en="Ergonomic and adolescent postural health debates." data-tr="Ergonomi ve doğru duruş alışkanlıkları üzerine oturumlar.">Ergonomic and adolescent postural health debates.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <span class="month-badge" data-en="Month 3" data-tr="3. Ay">Month 3</span>
+        <h3 data-en="Living Tableaux & Digital Media" data-tr="Canlı Tablo (Tableau Vivant) ve Üretim">Living Tableaux & Digital Media</h3>
+        <ul class="activity-list">
+          <li data-en="Tableau Vivant student re-enactments with precise posture & lighting." data-tr="Öğrencilerin heykelleri gerçek bedensel duruşla canlandırması ve fotoğraflanması.">Tableau Vivant student re-enactments with precise posture & lighting.</li>
+          <li data-en="Dual-layer visual composition (historic statue + live recreation)." data-tr="Çift katmanlı görsel tasarım (orijinal heykel + canlı öğrenci canlandırması).">Dual-layer visual composition (historic statue + live recreation).</li>
+          <li data-en="Interactive audio & anatomical tagging using multimedia tools (Genially/ThingLink)." data-tr="Sesli anlatım ve kas etiketleri eklenmiş interaktif görsel üretimi (Genially/ThingLink).">Interactive audio & anatomical tagging using multimedia tools (Genially/ThingLink).</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <span class="month-badge" data-en="Month 4" data-tr="4. Ay">Month 4</span>
+        <h3 data-en="Common Products & Dissemination" data-tr="Ortak Ürünler ve Yaygınlaştırma">Common Products & Dissemination</h3>
+        <ul class="activity-list">
+          <li data-en="Product 1: Interactive Anatomy & Sports Calendar (E-book & printable poster)." data-tr="Ürün 1: İnteraktif Anatomi ve Spor Takvimi (E-kitap ve basılabilir afiş).">Product 1: Interactive Anatomy & Sports Calendar (E-book & printable poster).</li>
+          <li data-en="Product 2: 3D Virtual Gallery Exhibition (Artsteps / Spatial.io)." data-tr="Ürün 2: 3D Sanal Sergi Müzesi (Artsteps / Spatial.io).">Product 2: 3D Virtual Gallery Exhibition (Artsteps / Spatial.io).</li>
+          <li data-en="Online final student webinar & project evaluation surveys." data-tr="Ortak öğrenci değerlendirme webinarı ve anketler.">Online final student webinar & project evaluation surveys.</li>
+          <li data-en="Quality Label documentation compilation." data-tr="Kalite Etiketi başvuru belgelerinin arşivlenmesi.">Quality Label documentation compilation.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. GALLERY BÖLÜMÜ (Yenilenmiş Sergi Galerisi) -->
+  <section id="gallery" class="page-section container">
+    <div class="section-head">
+      <h2 data-en="Iconography of Sports Gallery" data-tr="Spor İkonografisi Galerisi">Iconography of Sports Gallery</h2>
+      <p data-en="Comparative exhibition: Classical sculptures, live student tableaux vivants, and digital postural analyses" data-tr="Karşılaştırmalı sergi: Klasik heykeller, öğrenci canlı heykelleri (tableau vivant) ve dijital postür analizleri">Comparative exhibition: Classical sculptures, live student tableaux vivants, and digital postural analyses</p>
+    </div>
+
+    <!-- Filtreleme Butonları -->
+    <div class="gallery-filter-wrap">
+      <button class="gallery-filter-btn active" onclick="filterGallery('all')" data-en="All Works" data-tr="Tüm Çalışmalar">All Works</button>
+      <button class="gallery-filter-btn" onclick="filterGallery('statue')" data-en="Classical Statues" data-tr="Klasik Heykeller">Classical Statues</button>
+      <button class="gallery-filter-btn" onclick="filterGallery('tableau')" data-en="Tableau Vivant" data-tr="Canlı Tablolar">Tableau Vivant</button>
+      <button class="gallery-filter-btn" onclick="filterGallery('anatomy')" data-en="Digital Anatomy" data-tr="Dijital Anatomi">Digital Anatomy</button>
+    </div>
+
+    <!-- Galeri Kartları -->
+    <div class="grid" id="gallery-grid">
+      
+      <!-- Kart 1: Discobolus -->
+      <div class="art-card" data-category="statue">
+        <div class="art-visual">
+          <span class="art-origin-badge">450 BC • Classical Greece</span>
+          <div class="art-visual-icon">🏛️</div>
+          <strong data-en="Discobolus of Myron" data-tr="Myron'un Diskobolos'u">Discobolus of Myron</strong>
+        </div>
+        <div class="art-details">
+          <div class="art-meta" data-en="Athletics & Dynamic Balance" data-tr="Atletizm ve Dinamik Denge">Athletics & Dynamic Balance</div>
+          <h3 data-en="The Discus Thrower" data-tr="Disk Atan Atlet">The Discus Thrower</h3>
+          <p class="art-desc" data-en="Analysis of rhythmic rotational momentum, abdominal tension, and kinetic chains before release." data-tr="Fırlatma öncesindeki dönme momenti, gövde rotasyonu ve karın kaslarının kinetik zincir analizi.">
+            Analysis of rhythmic rotational momentum, abdominal tension, and kinetic chains before release.
+          </p>
+          <div class="art-tag-list">
+            <span class="art-tag">Discus</span>
+            <span class="art-tag">Biomechanics</span>
+            <span class="art-tag">Sculpture</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kart 2: Boxer at Rest -->
+      <div class="art-card" data-category="statue">
+        <div class="art-visual" style="background: linear-gradient(135deg, #332011 0%, #59391e 100%);">
+          <span class="art-origin-badge">330 BC • Hellenistic</span>
+          <div class="art-visual-icon">🥊</div>
+          <strong data-en="Boxer at Rest (Terme Boxer)" data-tr="Dinlenen Boksör (Terme Boksörü)">Boxer at Rest (Terme Boxer)</strong>
+        </div>
+        <div class="art-details">
+          <div class="art-meta" data-en="Combat Sports & Fatigue Posture" data-tr="Dövüş Sporları ve Yorgunluk Postürü">Combat Sports & Fatigue Posture</div>
+          <h3 data-en="Pugilist in Contemplation" data-tr="Düşünen Antik Boksör">Pugilist in Contemplation</h3>
+          <p class="art-desc" data-en="Study of caestus gloves, facial resilience, muscular exhaustion, and spine alignment while resting." data-tr="Deri eldivenler, yüz ifadelerindeki direnç, kas yorgunluğu ve dinlenme anındaki omurga postürü incelemesi.">
+            Study of caestus gloves, facial resilience, muscular exhaustion, and spine alignment while resting.
+          </p>
+          <div class="art-tag-list">
+            <span class="art-tag">Boxing</span>
+            <span class="art-tag">Ergonomics</span>
+            <span class="art-tag">Bronze Art</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kart 3: Student Tableau Vivant Re-enactment -->
+      <div class="art-card" data-category="tableau">
+        <div class="art-visual" style="background: linear-gradient(135deg, #1b3a2b 0%, #2f6349 100%);">
+          <span class="art-origin-badge">Student Production</span>
+          <div class="art-visual-icon">🎭</div>
+          <strong data-en="Live Statue Re-enactment" data-tr="Canlı Heykel Canlandırması">Live Statue Re-enactment</strong>
+        </div>
+        <div class="art-details">
+          <div class="art-meta" data-en="Tableau Vivant Workshop" data-tr="Canlı Tablo Atölyesi">Tableau Vivant Workshop</div>
+          <h3 data-en="Static Pose & Muscle Control" data-tr="Statik Duruş ve Kas Kontrolü">Static Pose & Muscle Control</h3>
+          <p class="art-desc" data-en="Transnational students recreating marble athletic postures through core stability and timed breathing." data-tr="Öğrencilerimizin mermer spor duruşlarını core dengesi, mim ve nefes kontrolüyle canlı tabloya dönüştürmesi.">
+            Transnational students recreating marble athletic postures through core stability and timed breathing.
+          </p>
+          <div class="art-tag-list">
+            <span class="art-tag">Live Performance</span>
+            <span class="art-tag">Drama</span>
+            <span class="art-tag">P.E. Lab</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kart 4: Borghese Gladiator -->
+      <div class="art-card" data-category="statue">
+        <div class="art-visual" style="background: linear-gradient(135deg, #441a24 0%, #6e2738 100%);">
+          <span class="art-origin-badge">100 BC • Hellenistic</span>
+          <div class="art-visual-icon">🏃</div>
+          <strong data-en="Borghese Gladiator" data-tr="Borghese Gladyatörü">Borghese Gladiator</strong>
+        </div>
+        <div class="art-details">
+          <div class="art-meta" data-en="Lunging Swordsmanship & Agility" data-tr="Eskrim ve Hamle Çevikliği">Lunging Swordsmanship & Agility</div>
+          <h3 data-en="Forward Defensive Lunge" data-tr="İleri Savunma Hamlesi">Forward Defensive Lunge</h3>
+          <p class="art-desc" data-en="Quadriceps and gluteal contraction in holding low forward stances against incoming attacks." data-tr="Düşük hücum duruşunda kuadriseps ve kalça kaslarının ani reaksiyon ve ağırlık merkezi analizi.">
+            Quadriceps and gluteal contraction in holding low forward stances against incoming attacks.
+          </p>
+          <div class="art-tag-list">
+            <span class="art-tag">Fencing</span>
+            <span class="art-tag">Kinematics</span>
+            <span class="art-tag">Louvre Art</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kart 5: Digital Anatomy Layer -->
+      <div class="art-card" data-category="anatomy">
+        <div class="art-visual" style="background: linear-gradient(135deg, #1f2937 0%, #374151 100%);">
+          <span class="art-origin-badge">Genially & ThingLink</span>
+          <div class="art-visual-icon">⚡</div>
+          <strong data-en="Digital Muscle Mapping" data-tr="Dijital Kas Haritalama">Digital Muscle Mapping</strong>
+        </div>
+        <div class="art-details">
+          <div class="art-meta" data-en="Digital Anatomy Overlays" data-tr="Dijital Anatomi Katmanları">Digital Anatomy Overlays</div>
+          <h3 data-en="Interactive Posture Tags" data-tr="Etkileşimli Postür Etiketleri">Interactive Posture Tags</h3>
+          <p class="art-desc" data-en="Collaborative graphic overlays marking agonist, antagonist muscles, joint angles, and center of mass." data-tr="Ortak öğrenci takımlarının heykeller üzerine eklediği çalışan kas etiketleri ve eklem açı şemaları.">
+            Collaborative graphic overlays marking agonist, antagonist muscles, joint angles, and center of mass.
+          </p>
+          <div class="art-tag-list">
+            <span class="art-tag">Web 2.0</span>
+            <span class="art-tag">Anatomy Lab</span>
+            <span class="art-tag">Graphics</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kart 6: 3D Virtual Museum -->
+      <div class="art-card" data-category="tableau">
+        <div class="art-visual" style="background: linear-gradient(135deg, #2b1f47 0%, #4c327d 100%);">
+          <span class="art-origin-badge">Common Product 2</span>
+          <div class="art-visual-icon">🏛️</div>
+          <strong data-en="3D Virtual Museum Room" data-tr="3D Sanal Müze Odası">3D Virtual Museum Room</strong>
+        </div>
+        <div class="art-details">
+          <div class="art-meta" data-en="Artsteps / Spatial.io" data-tr="Artsteps / Spatial.io">Artsteps / Spatial.io</div>
+          <h3 data-en="European Collaborative Gallery" data-tr="Avrupa Ortak Sanal Sergisi">European Collaborative Gallery</h3>
+          <p class="art-desc" data-en="Interactive 3D space curating photos, audio narrations, and student tableau vivant videos in virtual reality." data-tr="Fotoğrafları, öğrenci seslendirmelerini ve canlı heykel videolarını bir araya getiren 3D sanal gerçeklik müzesi.">
+            Interactive 3D space curating photos, audio narrations, and student tableau vivant videos in virtual reality.
+          </p>
+          <div class="art-tag-list">
+            <span class="art-tag">3D Museum</span>
+            <span class="art-tag">Virtual Reality</span>
+            <span class="art-tag">Dissemination</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 6. eSAFETY BÖLÜMÜ -->
+  <section id="esafety" class="page-section container">
+    <div class="section-head">
+      <h2 data-en="eSafety & Digital Ethics Policy" data-tr="e-Güvenlik ve Dijital Etik İlkeleri">eSafety & Digital Ethics Policy</h2>
+      <p data-en="Committed to strict child protection, GDPR compliance, and responsible digital citizenship" data-tr="Öğrenci güvenliği, GDPR (KVKK) uyumu ve sorumlu dijital vatandaşlık taahhüdümüz">Committed to strict child protection, GDPR compliance, and responsible digital citizenship</p>
+    </div>
+
+    <div class="esafety-banner">
+      <h3 data-en="🛡️ Safe, Ethical & Inclusive European Collaboration" data-tr="🛡️ Güvenli, Etik ve Kapsayıcı Avrupa İş Birliği">🛡️ Safe, Ethical & Inclusive European Collaboration</h3>
+      <p data-en="In our 'Living Statues' project, the safety, privacy, and digital well-being of all participating students are our highest priority. All project activities adhere strictly to the European School Education Platform (ESEP) eSafety and GDPR guidelines." data-tr="'Living Statues' projemizde tüm katılımcı öğrencilerin güvenliği, kişisel veri gizliliği ve dijital refahı en temel önceliğimizdir. Tüm proje etkinlikleri Avrupa Okul Eğitimi Platformu (ESEP) e-Güvenlik ve GDPR kurallarına tam uyumla yürütülür.">
+        In our 'Living Statues' project, the safety, privacy, and digital well-being of all participating students are our highest priority. All project activities adhere strictly to the European School Education Platform (ESEP) eSafety and GDPR guidelines.
+      </p>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <div style="font-size: 2rem; margin-bottom: 0.5rem;">📝</div>
+        <h3 data-en="Parental Consent & GDPR" data-tr="Veli İzinleri ve Veri Koruma">Parental Consent & GDPR</h3>
+        <p data-en="Prior to participating in any activity, living statue performance, or photograph shooting, verified parental consent forms are collected by each partner school in accordance with EU GDPR regulations." data-tr="Herhangi bir canlı heykel performansı, fotoğraf veya video çekimi öncesinde her ortak okul tarafından AB GDPR (KVKK) standartlarına uygun veli izin onay formları eksiksiz olarak toplanır.">
+          Prior to participating in any activity, living statue performance, or photograph shooting, verified parental consent forms are collected by each partner school in accordance with EU GDPR regulations.
+        </p>
+      </div>
+
+      <div class="card">
+        <div style="font-size: 2rem; margin-bottom: 0.5rem;">🔒</div>
+        <h3 data-en="Student Identity Privacy" data-tr="Öğrenci Kimlik Gizliliği">Student Identity Privacy</h3>
+        <p data-en="Students' full surnames, personal contact details, or private social media accounts are never published online. On TwinSpace and web outputs, only first names or team aliases are utilized." data-tr="Öğrencilerin soyisimleri, kişisel iletişim bilgileri veya özel sosyal medya hesapları asla kamuya açık paylaşılmaz. TwinSpace ve web çıktılarında yalnızca ilk isimler veya takım lakapları kullanılır.">
+          Students' full surnames, personal contact details, or private social media accounts are never published online. On TwinSpace and web outputs, only first names or team aliases are utilized.
+        </p>
+      </div>
+
+      <div class="card">
+        <div style="font-size: 2rem; margin-bottom: 0.5rem;">⚖️</div>
+        <h3 data-en="Copyright & Creative Commons" data-tr="Telif Hakları ve Dijital Nezaket">Copyright & Creative Commons</h3>
+        <p data-en="All museum sculptures, anatomical reference materials, and soundtracks used in student creations strictly respect Creative Commons licenses and intellectual property laws with direct academic citation." data-tr="Öğrenci üretimlerinde kullanılan tüm heykel görselleri, anatomi kaynakları ve müzikler Creative Commons lisanslarına ve telif haklarına tam saygılıdır; kaynaklar akademik olarak etiketlenir.">
+          All museum sculptures, anatomical reference materials, and soundtracks used in student creations strictly respect Creative Commons licenses and intellectual property laws with direct academic citation.
+        </p>
+      </div>
+
+      <div class="card">
+        <div style="font-size: 2rem; margin-bottom: 0.5rem;">🌐</div>
+        <h3 data-en="Safer Internet Day & Netiquette" data-tr="Güvenli İnternet Günü & Dijital Ayak İzi">Safer Internet Day & Netiquette</h3>
+        <p data-en="Our curriculum integrates workshops on digital footprints, cyberbullying prevention, and collaborative activities for Safer Internet Day (SID) to nurture responsible digital citizens." data-tr="Müfredatımız; Güvenli İnternet Günü (SID) etkinliklerini, dijital ayak izi farkındalığını ve siber zorbalığı önleme atölyelerini kapsayarak öğrencilere bilinçli dijital vatandaşlık kazandırır.">
+          Our curriculum integrates workshops on digital footprints, cyberbullying prevention, and collaborative activities for Safer Internet Day (SID) to nurture responsible digital citizens.
+        </p>
+      </div>
+    </div>
+
+    <div class="canva-box">
+      <div class="canva-content">
+        <span class="canva-badge">Canva Resource</span>
+        <h3 data-en="Official Project eSafety & Ethics Guidelines" data-tr="Resmi Proje e-Güvenlik & Etik Rehberi">Official Project eSafety & Ethics Guidelines</h3>
+        <p data-en="Access our dedicated interactive eSafety guidelines designed on Canva. It covers essential digital rules, etiquette, and collaborative protocols prepared for all students and partners." data-tr="Canva üzerinde hazırlanan interaktif e-Güvenlik yönergemize erişin. Tüm öğrenciler ve ortaklar için hazırlanan temel dijital kuralları, nezaket ilkelerini ve iş birliği protokollerini içerir.">
+          Access our dedicated interactive eSafety guidelines designed on Canva. It covers essential digital rules, etiquette, and collaborative protocols prepared for all students and partners.
+        </p>
+      </div>
+      <a href="https://canva.link/a3058cd7ujmn3da" target="_blank" rel="noopener noreferrer" class="canva-btn">
+        🎨 <span data-en="Open Canva Design" data-tr="Canva Tasarımını Aç">Open Canva Design</span> ↗
+      </a>
+    </div>
+  </section>
+
+  <!-- 7. CONNECTS BÖLÜMÜ -->
+  <section id="connects" class="page-section container">
+    <div class="section-head">
+      <h2 data-en="Connects & Institutional Links" data-tr="İletişim ve Kurumsal Bağlantılar">Connects & Institutional Links</h2>
+      <p data-en="Follow our project journey, contact coordinators, and visit partner school websites" data-tr="Proje sürecimizi takip edin, koordinatörlerle iletişime geçin ve ortak okul web sitelerini ziyaret edin">Follow our project journey, contact coordinators, and visit partner school websites</p>
+    </div>
+
+    <div class="connects-wrap">
+      <div class="qr-box">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=240x240&color=C5A059&bgcolor=faf8f5&data=https://www.instagram.com/livingstatues2026/" alt="Instagram @livingstatues2026 QR Code">
+        <div style="margin-top: 1rem; font-weight: 700; font-size: 1.15rem; color: #C5A059; letter-spacing: 0.5px;">@LIVINGSTATUES2026</div>
+      </div>
+
+      <div class="connects-details">
+        <h3 data-en="Official Project Channels" data-tr="Resmi Proje Kanalları">Official Project Channels</h3>
+        <p data-en="Follow our official Instagram account for live performance photos, behind-the-scenes moments, and project updates. You can also contact our coordination team via email." data-tr="Canlı heykel performansları, kamera arkası anlar ve proje güncellemeleri için resmi Instagram hesabımızı takip edebilir; ekibimize doğrudan e-posta gönderebilirsiniz.">
+          Follow our official Instagram account for live performance photos, behind-the-scenes moments, and project updates. You can also contact our coordination team via email.
+        </p>
+        <div class="buttons-wrap">
+          <a href="https://www.instagram.com/livingstatues2026/" target="_blank" rel="noopener noreferrer" class="ig-btn">
+            📸 <span data-en="Visit @livingstatues2026" data-tr="@livingstatues2026 Sayfası">Visit @livingstatues2026</span>
+          </a>
+          <a href="mailto:etwinninghpl2025@gmail.com" class="mail-btn">
+            ✉️ <span data-en="Email Coordinators" data-tr="Koordinatörlere E-Posta">Email Coordinators</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 2rem;">
+      <h3 style="font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--primary); margin-bottom: 1.5rem; text-align: center;" data-en="Partner Teachers & Official Institutional Websites" data-tr="Ortak Öğretmenler ve Resmi Kurum Web Siteleri">
+        Partner Teachers & Official Institutional Websites
+      </h3>
+      <div class="grid">
+        <div class="card">
+          <span class="partner-role" data-en="Co-Founder / Coordinator" data-tr="Kurucu Ortak / Koordinatör">Co-Founder / Coordinator</span>
+          <h3>MEDİHA TABAK</h3>
+          <p class="partner-school" data-en="Haydarpaşa High School" data-tr="Haydarpaşa Lisesi">Haydarpaşa High School</p>
+          <p class="partner-country" data-en="🇹🇷 Turkey" data-tr="🇹🇷 Türkiye">🇹🇷 Turkey</p>
+          <div class="school-web-info">
+            <a href="https://haydarpasalisesi.meb.k12.tr/" target="_blank" rel="noopener noreferrer" class="school-link">🌐 <span data-en="Visit School Website" data-tr="Okul Sitesine Git">Visit School Website</span></a>
+            <span class="school-url-text">https://haydarpasalisesi.meb.k12.tr/</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="partner-role" data-en="Co-Founder / Coordinator" data-tr="Kurucu Ortak / Koordinatör">Co-Founder / Coordinator</span>
+          <h3>Suzana Tomić</h3>
+          <p class="partner-school" data-en="Second Kragujevac Gymnasium" data-tr="Druga Kragujevac Lisesi (Друга крагујевачка гимназија)">Second Kragujevac Gymnasium</p>
+          <p class="partner-country" data-en="🇷🇸 Serbia" data-tr="🇷🇸 Sırbistan">🇷🇸 Serbia</p>
+          <div class="school-web-info">
+            <a href="https://drugagimnazija.edu.rs/" target="_blank" rel="noopener noreferrer" class="school-link">🌐 <span data-en="Visit School Website" data-tr="Okul Sitesine Git">Visit School Website</span></a>
+            <span class="school-url-text">https://drugagimnazija.edu.rs/</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="partner-role" data-en="Partner Teacher" data-tr="Ortak Öğretmen">Partner Teacher</span>
+          <h3>Elvan BAKIRCI PEKEL</h3>
+          <p class="partner-school" data-en="Didim Yenihisar Anatolian High School" data-tr="Didim Yenihisar Anadolu Lisesi">Didim Yenihisar Anatolian High School</p>
+          <p class="partner-country" data-en="🇹🇷 Turkey" data-tr="🇹🇷 Türkiye">🇹🇷 Turkey</p>
+          <div class="school-web-info">
+            <a href="https://yenihisaral.meb.k12.tr/" target="_blank" rel="noopener noreferrer" class="school-link">🌐 <span data-en="Visit School Website" data-tr="Okul Sitesine Git">Visit School Website</span></a>
+            <span class="school-url-text">https://yenihisaral.meb.k12.tr/</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="partner-role" data-en="Partner Teacher" data-tr="Ortak Öğretmen">Partner Teacher</span>
+          <h3>Anisoara Taru</h3>
+          <p class="partner-school" data-en="Sports High School of Galați (LPS Galați)" data-tr="Galați Spor Lisesi (Liceul cu Program Sportiv)">Sports High School of Galați (LPS Galați)</p>
+          <p class="partner-country" data-en="🇷🇴 Romania" data-tr="🇷🇴 Romanya">🇷🇴 Romania</p>
+          <div class="school-web-info">
+            <a href="https://lpsgalati.ro/nou/" target="_blank" rel="noopener noreferrer" class="school-link">🌐 <span data-en="Visit School Website" data-tr="Okul Sitesine Git">Visit School Website</span></a>
+            <span class="school-url-text">https://lpsgalati.ro/nou/</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="partner-role" data-en="Partner Teacher" data-tr="Ortak Öğretmen">Partner Teacher</span>
+          <h3>Aysel Beyza Ata</h3>
+          <p class="partner-school" data-en="Haydarpaşa High School" data-tr="Haydarpaşa Lisesi">Haydarpaşa High School</p>
+          <p class="partner-country" data-en="🇹🇷 Turkey" data-tr="🇹🇷 Türkiye">🇹🇷 Turkey</p>
+          <div class="school-web-info">
+            <a href="https://haydarpasalisesi.meb.k12.tr/" target="_blank" rel="noopener noreferrer" class="school-link">🌐 <span data-en="Visit School Website" data-tr="Okul Sitesine Git">Visit School Website</span></a>
+            <span class="school-url-text">https://haydarpasalisesi.meb.k12.tr/</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p data-en="© 2026 Living Statues: Iconography of Sports | Haydarpaşa High School & Partners" data-tr="© 2026 Living Statues: Spor İkonografisi | Haydarpaşa Lisesi ve Ortakları">© 2026 Living Statues: Iconography of Sports | Haydarpaşa High School & Partners</p>
+    <p style="margin-top: 0.4rem; font-size: 0.85rem; color: #cbd5e1;">
+      Official Contact: <a href="mailto:etwinninghpl2025@gmail.com">etwinninghpl2025@gmail.com</a>
+    </p>
+  </footer>
+
+  <script>
+    function showSection(sectionId) {
+      document.querySelectorAll('.page-section').forEach(sec => {
+        sec.classList.remove('active');
+      });
+
+      const target = document.getElementById(sectionId);
+      if (target) {
+        target.classList.add('active');
+      }
+
+      document.querySelectorAll('.nav-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('onclick').includes(sectionId)) {
+          btn.classList.add('active');
+        }
+      });
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function switchPadlet(tabName) {
+      document.querySelectorAll('.padlet-pane').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.padlet-tab-btn').forEach(b => b.classList.remove('active'));
+
+      if (tabName === 'schools') {
+        document.getElementById('padlet-schools').classList.add('active');
+        event.currentTarget.classList.add('active');
+      } else if (tabName === 'teachers') {
+        document.getElementById('padlet-teachers').classList.add('active');
+        event.currentTarget.classList.add('active');
+      } else if (tabName === 'students') {
+        document.getElementById('padlet-students').classList.add('active');
+        event.currentTarget.classList.add('active');
+      }
+    }
+
+    // Galeri Filtreleme Fonksiyonu
+    function filterGallery(category) {
+      document.querySelectorAll('.gallery-filter-btn').forEach(btn => btn.classList.remove('active'));
+      event.currentTarget.classList.add('active');
+
+      const cards = document.querySelectorAll('.art-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Canlı Ziyaretçi Sayacı
+    function initVisitorCounter() {
+      let count = localStorage.getItem('living_statues_visitors');
+      if (!count) {
+        count = 1248;
+      } else {
+        count = parseInt(count) + 1;
+      }
+      localStorage.setItem('living_statues_visitors', count);
+      const el = document.getElementById('visitor-count');
+      if (el) {
+        el.textContent = Number(count).toLocaleString();
+      }
+    }
+    initVisitorCounter();
+
+    let currentLang = 'en';
+    function toggleLanguage() {
+      currentLang = currentLang === 'en' ? 'tr' : 'en';
+      document.documentElement.lang = currentLang;
+
+      document.querySelectorAll('[data-' + currentLang + ']').forEach(el => {
+        el.textContent = el.getAttribute('data-' + currentLang);
+      });
+    }
+  </script>
+</body>
+</html>
