@@ -22,7 +22,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1.1rem 6%;
+      padding: 0.9rem 5%;
       background: #fff;
       border-bottom: 1px solid #ECE7DE;
       position: sticky;
@@ -30,7 +30,29 @@
       z-index: 1000;
       box-shadow: 0 2px 8px rgba(0,0,0,0.03);
     }
-    .brand { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700; color: var(--primary); text-decoration: none; cursor: pointer; }
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .brand { font-family: 'Playfair Display', serif; font-size: 1.28rem; font-weight: 700; color: var(--primary); }
+    .nav-etwinning-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: #f0f7ff;
+      border: 1px solid #bae6fd;
+      padding: 3px 9px;
+      border-radius: 20px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: #0369a1;
+      letter-spacing: 0.4px;
+    }
+    .nav-etwinning-pill span { color: #f59e0b; font-size: 0.85rem; }
+
     .nav-right { display: flex; align-items: center; gap: 1.2rem; }
     
     .nav-links { display: flex; gap: 0.4rem; flex-wrap: wrap; }
@@ -79,16 +101,20 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Hero / Home */
+    /* Hero / Home - Banner Kırpılma Düzeltmesi */
     .hero-banner {
       width: 100%;
-      background-color: #e2e8f0;
+      background: #eef2f6;
       border-bottom: 3px solid var(--accent);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
     }
     .hero-banner img {
       width: 100%;
-      max-height: 480px;
-      object-fit: cover;
+      max-height: 520px;
+      object-fit: contain;
       display: block;
     }
     .hero-text-wrap {
@@ -96,18 +122,33 @@
       padding: 3rem 1.5rem 2rem;
       background: #fff;
     }
+    .etwinning-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: linear-gradient(135deg, #15375B 0%, #0284c7 100%);
+      color: #ffffff;
+      padding: 6px 16px;
+      border-radius: 30px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 0.8rem;
+      box-shadow: 0 3px 10px rgba(2, 132, 199, 0.25);
+    }
+    .etwinning-hero-badge .star-icon { color: #facc15; font-size: 1rem; }
     .badge {
-      display: inline-block;
+      display: block;
       text-transform: uppercase;
       letter-spacing: 1.5px;
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       font-weight: 700;
       color: var(--accent);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
     }
     .title {
       font-family: 'Playfair Display', serif;
-      font-size: 2.4rem;
+      font-size: 2.5rem;
       color: var(--primary);
       margin-bottom: 0.5rem;
     }
@@ -115,7 +156,7 @@
       font-family: 'Playfair Display', serif;
       font-style: italic;
       color: var(--muted);
-      font-size: 1.2rem;
+      font-size: 1.25rem;
     }
 
     /* Genel Konteyner */
@@ -585,7 +626,10 @@
 
   <!-- Navigasyon -->
   <nav>
-    <div class="brand" onclick="showSection('home')">🏛️ Living Statues</div>
+    <div class="brand-wrap" onclick="showSection('home')">
+      <span class="brand">🏛️ Living Statues</span>
+      <span class="nav-etwinning-pill"><span>★</span> eTwinning Project</span>
+    </div>
     <div class="nav-right">
       <div class="nav-links">
         <button class="nav-btn active" onclick="showSection('home')" data-en="Home" data-tr="Ana Sayfa">Home</button>
@@ -602,11 +646,17 @@
 
   <!-- 1. HOME BÖLÜMÜ -->
   <main id="home" class="page-section active">
+    <!-- Kırpılmayan Tam Banner -->
     <div class="hero-banner">
-      <img src="banner.png" alt="Living Statues Banner">
+      <img src="banner.png" alt="Living Statues eTwinning Banner">
     </div>
+
     <div class="hero-text-wrap">
-      <span class="badge" data-en="eTwinning Project (Age: 14-18)" data-tr="eTwinning Projesi (Yaş: 14-18)">eTwinning Project (Age: 14-18)</span>
+      <!-- Görünür eTwinning Vurgu Rozeti -->
+      <div class="etwinning-hero-badge">
+        <span class="star-icon">★</span> OFFICIAL eTWINNING PROJECT <span class="star-icon">★</span>
+      </div>
+      <span class="badge" data-en="European School Collaboration • Age: 14-18" data-tr="Avrupa Okul İş Birliği Projesi • Yaş: 14-18">European School Collaboration • Age: 14-18</span>
       <h1 class="title">Living Statues</h1>
       <h2 class="subtitle" data-en="Iconography of Sports from Antiquity to Modern Era" data-tr="Antik Çağ'dan Modern Döneme Spor İkonografisi">Iconography of Sports from Antiquity to Modern Era</h2>
     </div>
@@ -682,7 +732,7 @@
     </div>
   </section>
 
-  <!-- 3. PARTNERS BÖLÜMÜ (Öğretmen İsimleri Eşitlendi) -->
+  <!-- 3. PARTNERS BÖLÜMÜ -->
   <section id="partners" class="page-section container">
     <div class="section-head">
       <h2 data-en="Project Partners & Community" data-tr="Proje Ortakları ve Topluluğumuz">Project Partners & Community</h2>
@@ -867,7 +917,6 @@
       <p data-en="Comparative exhibition: Classical sculptures, live student tableaux vivants, and digital postural analyses" data-tr="Karşılaştırmalı sergi: Klasik heykeller, öğrenci canlı heykelleri (tableau vivant) ve dijital postür analizleri">Comparative exhibition: Classical sculptures, live student tableaux vivants, and digital postural analyses</p>
     </div>
 
-    <!-- Filtreleme Butonları -->
     <div class="gallery-filter-wrap">
       <button class="gallery-filter-btn active" onclick="filterGallery('all')" data-en="All Works" data-tr="Tüm Çalışmalar">All Works</button>
       <button class="gallery-filter-btn" onclick="filterGallery('statue')" data-en="Classical Statues" data-tr="Klasik Heykeller">Classical Statues</button>
@@ -875,7 +924,6 @@
       <button class="gallery-filter-btn" onclick="filterGallery('anatomy')" data-en="Digital Anatomy" data-tr="Dijital Anatomi">Digital Anatomy</button>
     </div>
 
-    <!-- Galeri Kartları -->
     <div class="grid" id="gallery-grid">
       <div class="art-card" data-category="statue">
         <div class="art-visual">
@@ -1061,7 +1109,7 @@
     </div>
   </section>
 
-  <!-- 7. CONNECTS BÖLÜMÜ (Öğretmen İsimleri Eşitlendi) -->
+  <!-- 7. CONNECTS BÖLÜMÜ -->
   <section id="connects" class="page-section container">
     <div class="section-head">
       <h2 data-en="Connects & Institutional Links" data-tr="İletişim ve Kurumsal Bağlantılar">Connects & Institutional Links</h2>
