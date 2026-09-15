@@ -992,7 +992,7 @@
       <div class="grid" style="margin-bottom: 2rem;">
         <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
           <div>
-            <div style="font-size: 2rem; margin-bottom: 0.8rem; color: var(--accent);">👩‍🎓</div>
+            <div style="font-size: 2rem; margin-bottom: 0.8rem; color: var(--accent);">🎓</div>
             <h3 data-en="Students Pre-Project Survey" data-tr="Öğrenci Proje Ön Anketi">Students Pre-Project Survey</h3>
             <p data-en="Initial baseline measurement assessing students' awareness in classical art, functional anatomy, and international team readiness." data-tr="Öğrencilerimizin klasik sanat, fonksiyonel anatomi ve uluslararası ekip çalışmasına yönelik başlangıç farkındalık düzeyini ölçen ön anket." style="margin-bottom: 1.5rem;">
               Initial baseline measurement assessing students' awareness in classical art, functional anatomy, and international team readiness.
@@ -1005,7 +1005,7 @@
 
         <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
           <div>
-            <div style="font-size: 2rem; margin-bottom: 0.8rem; color: var(--accent);">👨‍🏫</div>
+            <div style="font-size: 2rem; margin-bottom: 0.8rem; color: var(--accent);">👩‍🏫</div>
             <h3 data-en="Teachers Pre-Project Survey" data-tr="Öğretmen Proje Ön Anketi">Teachers Pre-Project Survey</h3>
             <p data-en="Pedagogical evaluation assessing partner teachers' expectations, methodology integration, and digital tool adoption for the project." data-tr="Ortak öğretmenlerin beklentilerini, metodoloji entegrasyonunu ve dijital araç kullanımını değerlendiren öğretmen ön anketi." style="margin-bottom: 1.5rem;">
               Pedagogical evaluation assessing partner teachers' expectations, methodology integration, and digital tool adoption for the project.
@@ -1018,13 +1018,13 @@
 
         <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
           <div>
-            <div style="font-size: 2rem; margin-bottom: 0.8rem; color: var(--accent);">famil</div>
+            <div style="font-size: 2rem; margin-bottom: 0.8rem; color: var(--accent);">👨‍👩‍👧‍👦</div>
             <h3 data-en="Parents Pre-Project Survey" data-tr="Veli Proje Ön Anketi">Parents Pre-Project Survey</h3>
             <p data-en="Baseline evaluation measuring parents' perspectives on student well-being, physical health, and project collaboration." data-tr="Velilerimizin öğrenci refahı, fiziksel sağlık ve proje iş birliğine yönelik bakış açısını ölçen veli ön anketi." style="margin-bottom: 1.5rem;">
               Baseline evaluation measuring parents' perspectives on student well-being, physical health, and project collaboration.
             </p>
           </div>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSf7MoAOOdbLDprgSjkINZzkuuJJoUzhIFzkND9c5s55lfz5uw/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" class="school-link" style="justify-content: center; width: 100%; background: #15375B;">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSf7MoAOOdbLDprgSjkINZzkuuJJoUzhIFzkND9c5s55lfz5uw/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" class="school-link" style="justify-content: center; width: 100%; background: var(--primary);">
             📋 <span data-en="Fill Parent Pre-Test" data-tr="Veli Ön Testini Doldur">Fill Parent Pre-Test</span> ↗
           </a>
         </div>
@@ -1261,6 +1261,19 @@
       });
     }
 
+    function initVisitorCounter() {
+      let count = localStorage.getItem('living_statues_visitors');
+      if (!count) {
+        count = 1248;
+      } else {
+        count = parseInt(count) + 1;
+      }
+      localStorage.setItem('living_statues_visitors', count);
+      const el = document.getElementById('visitor-count');
+      if (el) {
+        el.textContent = Number(count).toLocaleString();
+      }
+    }
     initVisitorCounter();
 
     let currentLang = 'en';
