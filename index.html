@@ -658,7 +658,7 @@
         </div>
 
         <div class="card">
-          <span class="partner-role" data-en="Co-Founder / Coordinator" data-tr="Kurucu Ortak / Koordinatör">Co-Founder / Coordinator</span>
+          <span class="partner-role" data-en="Co-Founder / Coordinator" data-tr="Kurucu Ortak / Koordinatör">Suzana Tomić</span>
           <h3>Suzana Tomić</h3>
           <p class="partner-school" data-en="Second Kragujevac Gymnasium" data-tr="Druga Kragujevac Lisesi (Друга крагујевачка гимназија)">Second Kragujevac Gymnasium</p>
           <p class="partner-country" data-en="🇷🇸 Serbia" data-tr="🇷🇸 Sırbistan">🇷🇸 Serbia</p>
@@ -969,7 +969,7 @@
     </div>
   </section>
 
-  <!-- 6. SURVEYS BÖLÜMÜ (Yalnızca Ön Test Kartları) -->
+  <!-- 6. SURVEYS BÖLÜMÜ (Öğrenci, Öğretmen ve Veli Ön Test Kartları) -->
   <section id="surveys" class="page-section">
     <div class="hero-banner">
       <img src="banner.png" alt="Living Statues: Iconography of Sports Banner">
@@ -1013,6 +1013,19 @@
           </div>
           <a href="https://forms.gle/795sHaEKPLsxRZ5S9" target="_blank" rel="noopener noreferrer" class="school-link" style="justify-content: center; width: 100%; background: var(--accent);">
             📊 <span data-en="Fill Teacher Pre-Test" data-tr="Öğretmen Ön Testini Doldur">Fill Teacher Pre-Test</span> ↗
+          </a>
+        </div>
+
+        <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="font-size: 2rem; margin-bottom: 0.8rem; color: var(--accent);">famil</div>
+            <h3 data-en="Parents Pre-Project Survey" data-tr="Veli Proje Ön Anketi">Parents Pre-Project Survey</h3>
+            <p data-en="Baseline evaluation measuring parents' perspectives on student well-being, physical health, and project collaboration." data-tr="Velilerimizin öğrenci refahı, fiziksel sağlık ve proje iş birliğine yönelik bakış açısını ölçen veli ön anketi." style="margin-bottom: 1.5rem;">
+              Baseline evaluation measuring parents' perspectives on student well-being, physical health, and project collaboration.
+            </p>
+          </div>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSf7MoAOOdbLDprgSjkINZzkuuJJoUzhIFzkND9c5s55lfz5uw/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" class="school-link" style="justify-content: center; width: 100%; background: #15375B;">
+            📋 <span data-en="Fill Parent Pre-Test" data-tr="Veli Ön Testini Doldur">Fill Parent Pre-Test</span> ↗
           </a>
         </div>
       </div>
@@ -1248,19 +1261,6 @@
       });
     }
 
-    function initVisitorCounter() {
-      let count = localStorage.getItem('living_statues_visitors');
-      if (!count) {
-        count = 1248;
-      } else {
-        count = parseInt(count) + 1;
-      }
-      localStorage.setItem('living_statues_visitors', count);
-      const el = document.getElementById('visitor-count');
-      if (el) {
-        el.textContent = Number(count).toLocaleString();
-      }
-    }
     initVisitorCounter();
 
     let currentLang = 'en';
