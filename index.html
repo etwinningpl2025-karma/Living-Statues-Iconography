@@ -244,8 +244,8 @@
     .school-link:hover { background: #0d233a; transform: translateY(-2px); }
     .school-url-text { font-size: 0.8rem; color: var(--muted); word-break: break-all; }
 
-    /* Padlet & Forms Wrappers */
-    .padlet-wrapper, .form-embed-wrapper {
+    /* Padlet Wrappers */
+    .padlet-wrapper {
       margin-top: 3.5rem;
       background: #ffffff;
       border: 1px solid #ECE7DE;
@@ -269,7 +269,7 @@
     .padlet-tab-btn.active { background: var(--primary); color: #ffffff; border-color: var(--primary); }
     .padlet-pane { display: none; }
     .padlet-pane.active { display: block; }
-    .padlet-header, .form-header {
+    .padlet-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -277,8 +277,8 @@
       flex-wrap: wrap;
       gap: 1rem;
     }
-    .padlet-header h3, .form-header h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--primary); }
-    .padlet-btn, .form-btn-ext {
+    .padlet-header h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--primary); }
+    .padlet-btn {
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
@@ -292,9 +292,8 @@
       border-radius: 6px;
       transition: all 0.2s ease;
     }
-    .padlet-btn:hover, .form-btn-ext:hover { background: var(--primary); color: #fff; }
+    .padlet-btn:hover { background: var(--primary); color: #fff; }
     .padlet-frame { width: 100%; height: 600px; border-radius: 12px; border: 1px solid #e2e8f0; display: block; }
-    .form-frame { width: 100%; height: 750px; border-radius: 12px; border: 1px solid #e2e8f0; display: block; }
 
     /* Etkinlikler */
     .month-badge {
@@ -510,7 +509,7 @@
       .nav-links { flex-wrap: wrap; justify-content: center; }
       .connects-wrap { flex-direction: column; gap: 2rem; text-align: center; }
       .buttons-wrap { justify-content: center; }
-      .padlet-frame, .form-frame { height: 500px; }
+      .padlet-frame { height: 500px; }
       .canva-box { text-align: center; justify-content: center; }
       .stats-grid { grid-template-columns: 1fr; }
     }
@@ -632,7 +631,7 @@
     </div>
   </section>
 
-  <!-- 3. PARTNERS BÖLÜMÜ (FOUNDER Güncellendi) -->
+  <!-- 3. PARTNERS BÖLÜMÜ -->
   <section id="partners" class="page-section">
     <div class="hero-banner">
       <img src="banner.png" alt="Living Statues: Iconography of Sports Banner">
@@ -970,7 +969,7 @@
     </div>
   </section>
 
-  <!-- 6. SURVEYS BÖLÜMÜ -->
+  <!-- 6. SURVEYS BÖLÜMÜ (Yalnızca Ön Test Kartları) -->
   <section id="surveys" class="page-section">
     <div class="hero-banner">
       <img src="banner.png" alt="Living Statues: Iconography of Sports Banner">
@@ -984,34 +983,38 @@
     </div>
 
     <div class="container">
-      <div class="grid" style="margin-bottom: 3rem;">
-        <div class="card">
-          <h3 data-en="📊 Pre-Project Survey (Month 1)" data-tr="📊 Proje Ön Anketi (1. Ay)">📊 Pre-Project Survey (Month 1)</h3>
-          <p data-en="Initial baseline measurement assessing students' awareness in classical art, functional anatomy, and international team readiness." data-tr="Öğrencilerimizin klasik sanat, fonksiyonel anatomi ve uluslararası ekip çalışmasına yönelik başlangıç farkındalık düzeyini ölçen ön anket.">
-            Initial baseline measurement assessing students' awareness in classical art, functional anatomy, and international team readiness.
-          </p>
-        </div>
-        <div class="card">
-          <h3 data-en="📈 Post-Project Survey (Month 4)" data-tr="📈 Proje Son Anketi (4. Ay)">📈 Post-Project Survey (Month 4)</h3>
-          <p data-en="Final comparative evaluation measuring learning outcomes, collaborative mindset, and postural health improvements." data-tr="Öğrenme çıktılarını, iş birlikçi bakış açısını ve postürel sağlık kazanımlarını kıyaslayacak olan final değerlendirme anketi.">
-            Final comparative evaluation measuring learning outcomes, collaborative mindset, and postural health improvements.
-          </p>
-        </div>
+      <div class="section-head" style="margin-bottom: 2rem;">
+        <h2 data-en="Project Evaluation Hub" data-tr="Proje Değerlendirme Merkezi">Project Evaluation Hub</h2>
+        <p data-en="Please participate in our baseline pre-project surveys and evaluations." data-tr="Lütfen proje başlangıç değerlendirme anketlerimize katılım sağlayın.">Please participate in our baseline pre-project surveys and evaluations.</p>
       </div>
 
-      <div class="form-embed-wrapper">
-        <div class="form-header">
+      <!-- KARTLAR ŞEKLİNDE ÖN TEST ALANI -->
+      <div class="grid" style="margin-bottom: 2rem;">
+        <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
           <div>
-            <h3 data-en="📝 Student Pre-Project Survey (Official Google Form)" data-tr="📝 Öğrenci Ön Anketi (Resmi Google Form)">📝 Student Pre-Project Survey (Official Google Form)</h3>
-            <p style="color: var(--muted); font-size: 0.92rem; margin-top: 0.2rem;" data-en="Please fill in the survey below directly or open it in full screen." data-tr="Aşağıdaki anketi doğrudan site üzerinden doldurabilir veya tam ekranda açabilirsiniz.">
-              Please fill in the survey below directly or open it in full screen.
+            <div style="font-size: 2rem; margin-bottom: 0.8rem; color: var(--accent);">👩‍🎓</div>
+            <h3 data-en="Students Pre-Project Survey" data-tr="Öğrenci Proje Ön Anketi">Students Pre-Project Survey</h3>
+            <p data-en="Initial baseline measurement assessing students' awareness in classical art, functional anatomy, and international team readiness." data-tr="Öğrencilerimizin klasik sanat, fonksiyonel anatomi ve uluslararası ekip çalışmasına yönelik başlangıç farkındalık düzeyini ölçen ön anket." style="margin-bottom: 1.5rem;">
+              Initial baseline measurement assessing students' awareness in classical art, functional anatomy, and international team readiness.
             </p>
           </div>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLScZCmhQxX7YFWP4tXXmiaV8NSmc2yibhPLQQyPkI3YhjOC-Xw/viewform?usp=header" target="_blank" rel="noopener noreferrer" class="form-btn-ext">
-            ↗️ <span data-en="Open Full Screen" data-tr="Tam Ekranda Aç">Open Full Screen</span>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScZCmhQxX7YFWP4tXXmiaV8NSmc2yibhPLQQyPkI3YhjOC-Xw/viewform?usp=header" target="_blank" rel="noopener noreferrer" class="school-link" style="justify-content: center; width: 100%;">
+            📝 <span data-en="Fill Student Pre-Test" data-tr="Öğrenci Ön Testini Doldur">Fill Student Pre-Test</span> ↗
           </a>
         </div>
-        <iframe class="form-frame" src="https://docs.google.com/forms/d/e/1FAIpQLScZCmhQxX7YFWP4tXXmiaV8NSmc2yibhPLQQyPkI3YhjOC-Xw/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Yükleniyor…</iframe>
+
+        <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="font-size: 2rem; margin-bottom: 0.8rem; color: var(--accent);">👨‍🏫</div>
+            <h3 data-en="Teachers Pre-Project Survey" data-tr="Öğretmen Proje Ön Anketi">Teachers Pre-Project Survey</h3>
+            <p data-en="Pedagogical evaluation assessing partner teachers' expectations, methodology integration, and digital tool adoption for the project." data-tr="Ortak öğretmenlerin beklentilerini, metodoloji entegrasyonunu ve dijital araç kullanımını değerlendiren öğretmen ön anketi." style="margin-bottom: 1.5rem;">
+              Pedagogical evaluation assessing partner teachers' expectations, methodology integration, and digital tool adoption for the project.
+            </p>
+          </div>
+          <a href="https://forms.gle/795sHaEKPLsxRZ5S9" target="_blank" rel="noopener noreferrer" class="school-link" style="justify-content: center; width: 100%; background: var(--accent);">
+            📊 <span data-en="Fill Teacher Pre-Test" data-tr="Öğretmen Ön Testini Doldur">Fill Teacher Pre-Test</span> ↗
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -1086,7 +1089,7 @@
     </div>
   </section>
 
-  <!-- 8. CONNECTS BÖLÜMÜ (FOUNDER Güncellendi) -->
+  <!-- 8. CONNECTS BÖLÜMÜ -->
   <section id="connects" class="page-section">
     <div class="hero-banner">
       <img src="banner.png" alt="Living Statues: Iconography of Sports Banner">
@@ -1139,7 +1142,7 @@
           </div>
 
           <div class="card">
-            <span class="partner-role" data-en="Co-Founder / Coordinator" data-tr="Kurucu Ortak / Koordinatör">Co-Founder / Coordinator</span>
+            <span class="partner-role" data-en="Co-Founder / Coordinator" data-tr="Kurucu Ortak / Koordinatör">Suzana Tomić</span>
             <h3>Suzana Tomić</h3>
             <p class="partner-school" data-en="Second Kragujevac Gymnasium" data-tr="Druga Kragujevac Lisesi (Друга крагујевачка гимназија)">Second Kragujevac Gymnasium</p>
             <p class="partner-country" data-en="🇷🇸 Serbia" data-tr="🇷🇸 Sırbistan">🇷🇸 Serbia</p>
