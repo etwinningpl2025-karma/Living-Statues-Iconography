@@ -101,34 +101,19 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Panoramik Banner Kapsayıcısı */
-    .hero-banner {
-      width: 100%;
-      background: #0d243a;
-      border-bottom: 3px solid var(--accent);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-    }
-    .hero-banner img {
-      width: 100%;
-      max-width: 1920px;
-      height: auto;
-      max-height: 560px;
-      object-fit: contain;
-      display: block;
-    }
+    /* Hero Alanı */
     .hero-text-wrap {
       text-align: center;
-      padding: 2.5rem 1.5rem 1.8rem;
-      background: #fff;
+      padding: 3.5rem 1.5rem 2.5rem;
+      background: linear-gradient(135deg, #15375B 0%, #1e4d7e 100%);
+      color: #fff;
     }
     .etwinning-hero-badge {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      background: linear-gradient(135deg, #15375B 0%, #0284c7 100%);
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(5px);
       color: #ffffff;
       padding: 6px 16px;
       border-radius: 30px;
@@ -136,7 +121,7 @@
       font-weight: 700;
       letter-spacing: 1px;
       margin-bottom: 0.8rem;
-      box-shadow: 0 3px 10px rgba(2, 132, 199, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
     .etwinning-hero-badge .star-icon { color: #facc15; font-size: 1rem; }
     .badge {
@@ -150,14 +135,14 @@
     }
     .title {
       font-family: 'Playfair Display', serif;
-      font-size: 2.4rem;
-      color: var(--primary);
+      font-size: 2.6rem;
+      color: #fff;
       margin-bottom: 0.5rem;
     }
     .subtitle {
       font-family: 'Playfair Display', serif;
       font-style: italic;
-      color: var(--muted);
+      color: #E2E8F0;
       font-size: 1.2rem;
     }
 
@@ -178,73 +163,218 @@
       flex-direction: column;
     }
     .card h3 { font-family: 'Playfair Display', serif; color: var(--primary); margin-bottom: 0.6rem; font-size: 1.25rem; }
+    .card p { color: var(--muted); font-size: 0.95rem; }
 
-    /* İstatistikler */
-    .stats-container { margin-top: 3.5rem; padding-top: 2.5rem; border-top: 1px solid #ECE7DE; }
-    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
-    .stat-card {
-      background: #ffffff;
-      border: 1px solid #ECE7DE;
-      border-radius: 14px;
-      padding: 1.8rem;
+    footer {
       text-align: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-    .stat-number { font-family: 'Playfair Display', serif; font-size: 2.3rem; font-weight: 700; color: var(--primary); margin-bottom: 0.3rem; }
-    .stat-label { font-size: 0.95rem; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.4rem; }
-    .stat-subtext { font-size: 0.88rem; color: var(--muted); }
-    .counter-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      background: #eef2f6;
-      color: var(--primary);
-      padding: 4px 12px;
-      border-radius: 20px;
-      font-weight: 700;
-      font-size: 0.85rem;
-      margin-top: 0.5rem;
-    }
-
-    /* Ortaklar */
-    .partner-role {
-      display: inline-block;
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      background: #eef2f6;
-      color: var(--primary);
-      padding: 3px 8px;
-      border-radius: 4px;
-      margin-bottom: 0.8rem;
-      align-self: flex-start;
-    }
-    .partner-school { font-weight: 600; color: var(--text); margin-bottom: 0.2rem; font-size: 1rem; }
-    .partner-country { font-size: 0.9rem; color: var(--muted); margin-bottom: 1.2rem; }
-    .school-web-info { margin-top: auto; display: flex; flex-direction: column; gap: 0.4rem; }
-    .school-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: #ffffff;
+      padding: 2.2rem 1rem;
       background: var(--primary);
-      text-decoration: none;
-      padding: 0.6rem 1rem;
-      border-radius: 6px;
-      transition: all 0.2s ease;
-      align-self: flex-start;
+      color: #E2E8F0;
+      font-size: 0.9rem;
+      margin-top: auto;
     }
-    .school-link:hover { background: #0d233a; transform: translateY(-2px); }
-    .school-url-text { font-size: 0.8rem; color: var(--muted); word-break: break-all; }
+    footer a { color: var(--accent); text-decoration: none; }
 
-    /* Padlet Wrappers */
-    .padlet-wrapper {
-      margin-top: 3.5rem;
-      background: #
+    @media (max-width: 768px) {
+      nav { flex-direction: column; gap: 1rem; }
+      .nav-links { flex-wrap: wrap; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigasyon -->
+  <nav>
+    <div class="brand-wrap" onclick="showSection('home')">
+      <span class="brand">🏛️ Living Statues</span>
+      <span class="nav-etwinning-pill"><span>★</span> eTwinning Project</span>
+    </div>
+    <div class="nav-right">
+      <div class="nav-links">
+        <button class="nav-btn active" onclick="showSection('home')" data-en="Home" data-tr="Ana Sayfa">Home</button>
+        <button class="nav-btn" onclick="showSection('about')" data-en="About" data-tr="Hakkında">About</button>
+        <button class="nav-btn" onclick="showSection('partners')" data-en="Partners" data-tr="Ortaklar">Partners</button>
+        <button class="nav-btn" onclick="showSection('activities')" data-en="Activities" data-tr="Etkinlikler">Activities</button>
+        <button class="nav-btn" onclick="showSection('gallery')" data-en="Gallery" data-tr="Galeri">Gallery</button>
+        <button class="nav-btn" onclick="showSection('surveys')" data-en="Surveys" data-tr="Anketler">Surveys</button>
+        <button class="nav-btn" onclick="showSection('esafety')" data-en="eSafety" data-tr="e-Güvenlik">eSafety</button>
+        <button class="nav-btn" onclick="showSection('connects')" data-en="Connects" data-tr="İletişim">Connects</button>
+      </div>
+      <button class="lang-switch" onclick="toggleLanguage()">TR / EN</button>
+    </div>
+  </nav>
+
+  <!-- 1. HOME BÖLÜMÜ -->
+  <main id="home" class="page-section active">
+    <div class="hero-text-wrap">
+      <div class="etwinning-hero-badge">
+        <span class="star-icon">★</span> OFFICIAL eTWINNING PROJECT <span class="star-icon">★</span>
+      </div>
+      <span class="badge" data-en="European School Collaboration • Age: 14-18" data-tr="Avrupa Okul İş Birliği Projesi • Yaş: 14-18">European School Collaboration • Age: 14-18</span>
+      <h1 class="title">Living Statues</h1>
+      <h2 class="subtitle" data-en="Iconography of Sports from Antiquity to Modern Era" data-tr="Antik Çağ'dan Modern Döneme Spor İkonografisi">Iconography of Sports from Antiquity to Modern Era</h2>
+    </div>
+    
+    <div class="container" style="padding-top: 2rem;">
+      <div class="grid">
+        <div class="card" onclick="showSection('about')" style="cursor: pointer; text-align: center;">
+          <h3 data-en="📖 Discover Our Project" data-tr="📖 Projeyi Keşfedin">📖 Discover Our Project</h3>
+          <p data-en="Learn about our interdisciplinary curriculum integrating physical education, arts, anatomy, and digital media." data-tr="Beden eğitimi, sanat, anatomi ve dijital medyayı entegre eden disiplinler arası müfredatımızı keşfedin.">Learn about our interdisciplinary curriculum integrating physical education, arts, anatomy, and digital media.</p>
+        </div>
+        <div class="card" onclick="showSection('partners')" style="cursor: pointer; text-align: center;">
+          <h3 data-en="🌍 Our Partners" data-tr="🌍 Ortaklarımız">🌍 Our Partners</h3>
+          <p data-en="Meet the collaborative European schools and dedicated teachers driving this journey." data-tr="Bu yolculuğa öncülük eden Avrupalı ortak okulları ve öğretmenleri tanıyın.">Meet the collaborative European schools and dedicated teachers driving this journey.</p>
+        </div>
+        <div class="card" onclick="showSection('gallery')" style="cursor: pointer; text-align: center;">
+          <h3 data-en="🏛️ Student Gallery" data-tr="🏛️ Öğrenci Galerisi">🏛️ Student Gallery</h3>
+          <p data-en="Explore statues, sports poses, and creative digital artworks created by students." data-tr="Öğrenciler tarafından oluşturulan heykelleri, spor pozlarını ve yaratıcı dijital eserleri keşfedin.">Explore statues, sports poses, and creative digital artworks created by students.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- 2. ABOUT BÖLÜMÜ -->
+  <main id="about" class="page-section">
+    <div class="container">
+      <div class="section-head">
+        <h2 data-en="About the Project" data-tr="Proje Hakkında">About the Project</h2>
+        <p data-en="Bridging classical art, sports history, and modern digital tools." data-tr="Klasik sanat, spor tarihi ve modern dijital araçları buluşturuyoruz.">Bridging classical art, sports history, and modern digital tools.</p>
+      </div>
+      <div class="card">
+        <h3 data-en="Project Aims" data-tr="Proje Amaçları">Project Aims</h3>
+        <p data-en="Living Statues: Iconography of Sports from Antiquity to Modern Era explores how physical culture and athletic postures have been depicted through art history. Students research historical statues, analyze athletic anatomy, and re-enact postures dynamically." data-tr="Living Statues: Antik Çağ'dan Modern Döneme Spor İkonografisi projesi, beden kültürünün ve atletik duruşların sanat tarihi boyunca nasıl betimlendiğini inceler. Öğrenciler tarihi heykelleri araştırır, atletik anatomiyi inceler ve pozları dinamik olarak yeniden canlandırır.">Living Statues: Iconography of Sports from Antiquity to Modern Era explores how physical culture and athletic postures have been depicted through art history.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- 3. PARTNERS BÖLÜMÜ -->
+  <main id="partners" class="page-section">
+    <div class="container">
+      <div class="section-head">
+        <h2 data-en="Project Partners" data-tr="Proje Ortakları">Project Partners</h2>
+        <p data-en="Schools and educators collaborating across Europe." data-tr="Avrupa genelinde iş birliği yapan okullar ve eğitimciler.">Schools and educators collaborating across Europe.</p>
+      </div>
+      <div class="card" style="text-align: center;">
+        <h3 data-en="Haydarpaşa Lisesi" data-tr="Haydarpaşa Lisesi">Haydarpaşa Lisesi</h3>
+        <p data-en="Türkiye (Co-Founder)" data-tr="Türkiye (Kurucu Ortak)">Türkiye (Co-Founder)</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- 4. ACTIVITIES BÖLÜMÜ -->
+  <main id="activities" class="page-section">
+    <div class="container">
+      <div class="section-head">
+        <h2 data-en="Activities & Timeline" data-tr="Etkinlikler ve Zaman Çizelgesi">Activities & Timeline</h2>
+        <p data-en="Step-by-step project milestones and workshops." data-tr="Adım adım proje aşamaları ve atölye çalışmaları.">Step-by-step project milestones and workshops.</p>
+      </div>
+      <div class="card">
+        <h3 data-en="Milestones" data-tr="Kilometre Taşları">Milestones</h3>
+        <p data-en="Research, 3D scanning, physical posture analysis, and international digital exhibitions." data-tr="Araştırma, 3D tarama, fiziksel duruş analizi ve uluslararası dijital sergiler.">Research, 3D scanning, physical posture analysis, and international digital exhibitions.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- 5. GALLERY BÖLÜMÜ -->
+  <main id="gallery" class="page-section">
+    <div class="container">
+      <div class="section-head">
+        <h2 data-en="Student Gallery" data-tr="Öğrenci Galerisi">Student Gallery</h2>
+        <p data-en="Creative outputs and visual interpretations." data-tr="Yaratıcı çıktılar ve görsel yorumlamalar.">Creative outputs and visual interpretations.</p>
+      </div>
+      <div class="card" style="text-align: center;">
+        <p data-en="Exhibition spaces coming soon..." data-tr="Sergi alanları yakında eklenecektir...">Exhibition spaces coming soon...</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- 6. SURVEYS BÖLÜMÜ -->
+  <main id="surveys" class="page-section">
+    <div class="container">
+      <div class="section-head">
+        <h2 data-en="Surveys & Evaluations" data-tr="Anketler ve Değerlendirmeler">Surveys & Evaluations</h2>
+        <p data-en="Project feedback forms and assessment tools." data-tr="Proje geri bildirim formları ve değerlendirme araçları.">Project feedback forms and assessment tools.</p>
+      </div>
+      <div class="card" style="text-align: center;">
+        <p data-en="Project evaluation surveys will be published here." data-tr="Proje değerlendirme anketleri burada yayınlanacaktır.">Project evaluation surveys will be published here.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- 7. ESAFETY BÖLÜMÜ -->
+  <main id="esafety" class="page-section">
+    <div class="container">
+      <div class="section-head">
+        <h2 data-en="eSafety Guidelines" data-tr="e-Güvenlik Kuralları">eSafety Guidelines</h2>
+        <p data-en="Ensuring safe digital environments for all student participants." data-tr="Tüm öğrenci katılımcılar için güvenli dijital ortamlar sağlama.">Ensuring safe digital environments for all student participants.</p>
+      </div>
+      <div class="card">
+        <h3 data-en="Our Commitment to Digital Safety" data-tr="Dijital Güvenliğe Taahhüdümüz">Our Commitment to Digital Safety</h3>
+        <p data-en="We strictly follow eSafety regulations, copyright protection, and secure communication protocols across all collaborative platforms." data-tr="Tüm iş birliği platformlarında e-güvenlik düzenlemelerine, telif hakkı korumasına ve güvenli iletişim protokollerine sıkı sıkıya bağlıyız.">We strictly follow eSafety regulations, copyright protection, and secure communication protocols.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- 8. CONNECTS BÖLÜMÜ -->
+  <main id="connects" class="page-section">
+    <div class="container">
+      <div class="section-head">
+        <h2 data-en="Connect With Us" data-tr="İletişim">Connect With Us</h2>
+        <p data-en="Reach out to project coordinators and schools." data-tr="Proje koordinatörlerine ve okullara ulaşın.">Reach out to project coordinators and schools.</p>
+      </div>
+      <div class="card" style="text-align: center;">
+        <h3 data-en="Official Contact" data-tr="Resmi İletişim">Official Contact</h3>
+        <p>eTwinning Living Statues Project Hub</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Living Statues: Iconography of Sports | <a href="#" onclick="showSection('home')">eTwinning Project</a></p>
+  </footer>
+
+  <!-- JavaScript Kodları -->
+  <script>
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll('.page-section');
+      sections.forEach(section => {
+        section.classList.remove('active');
+      });
+
+      const targetSection = document.getElementById(sectionId);
+      if (targetSection) {
+        targetSection.classList.add('active');
+      }
+
+      const navButtons = document.querySelectorAll('.nav-btn');
+      navButtons.forEach(btn => {
+        btn.classList.remove('active');
+        const onclickAttr = btn.getAttribute('onclick') || '';
+        if (onclickAttr.includes(`'${sectionId}'`)) {
+          btn.classList.add('active');
+        }
+      });
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    let currentLang = 'en';
+    function toggleLanguage() {
+      currentLang = currentLang === 'en' ? 'tr' : 'en';
+      const elements = document.querySelectorAll('[data-en][data-tr]');
+      
+      elements.forEach(el => {
+        const text = el.getAttribute(`data-${currentLang}`);
+        if (text) {
+          if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+            el.placeholder = text;
+          } else {
+            el.textContent = text;
+          }
+        }
+      });
+    }
+  </script>
+</body>
+</html>
