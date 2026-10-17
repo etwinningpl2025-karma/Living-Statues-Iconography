@@ -210,6 +210,40 @@
       margin-top: 0.5rem;
     }
 
+    /* Ortaklar */
+    .partner-role {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      background: #eef2f6;
+      color: var(--primary);
+      padding: 3px 8px;
+      border-radius: 4px;
+      margin-bottom: 0.8rem;
+      align-self: flex-start;
+    }
+    .partner-school { font-weight: 600; color: var(--text); margin-bottom: 0.2rem; font-size: 1rem; }
+    .partner-country { font-size: 0.9rem; color: var(--muted); margin-bottom: 1.2rem; }
+    .school-web-info { margin-top: auto; display: flex; flex-direction: column; gap: 0.4rem; }
+    .school-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #ffffff;
+      background: var(--primary);
+      text-decoration: none;
+      padding: 0.6rem 1rem;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+      align-self: flex-start;
+    }
+    .school-link:hover { background: #0d233a; transform: translateY(-2px); }
+    .school-url-text { font-size: 0.8rem; color: var(--muted); word-break: break-all; }
+
     /* Canva Embed Stilleri */
     .canva-embed-container {
       margin-top: 2.5rem;
@@ -352,9 +386,15 @@
         <h2>About the Project</h2>
         <p>Bridging classical art history and physical education through creative student expression.</p>
       </div>
-      <div class="card">
-        <h3>Project Objectives</h3>
-        <p>Students examine how sports and physical culture have been depicted through centuries in statues, pottery, and paintings. By recreating these poses as living statues, they connect historical iconography with physical education.</p>
+      <div class="grid">
+        <div class="card">
+          <h3>🏺 Sculptural Iconography</h3>
+          <p>Investigating classical sports sculptures, aesthetic ideals, and the representation of athletic motion across European history.</p>
+        </div>
+        <div class="card">
+          <h3>⚡ Functional Anatomy</h3>
+          <p>Analyzing agonist/antagonist muscle groups, joint alignments, and biomechanical principles behind ancient athletic poses.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -368,12 +408,14 @@
       </div>
       <div class="grid">
         <div class="card">
-          <h3>Haydarpaşa Lisesi</h3>
-          <p>Türkiye / İstanbul</p>
+          <span class="partner-role">Coordinator</span>
+          <h3 class="partner-school">Haydarpaşa Lisesi</h3>
+          <p class="partner-country">Türkiye / İstanbul</p>
         </div>
         <div class="card">
-          <h3>European Partners</h3>
-          <p>Partner schools from Romania, Serbia, Croatia, and Spain.</p>
+          <span class="partner-role">Partner School</span>
+          <h3 class="partner-school">European Partner Schools</h3>
+          <p class="partner-country">Romania, Serbia, Croatia & Spain</p>
         </div>
       </div>
     </div>
@@ -482,7 +524,6 @@
         targetSection.classList.add('active');
       }
       
-      // İlgili navigasyon butonunu aktif yap
       document.querySelectorAll('.nav-btn').forEach(btn => {
         if (btn.getAttribute('onclick') && btn.getAttribute('onclick').includes(sectionId)) {
           btn.classList.add('active');
