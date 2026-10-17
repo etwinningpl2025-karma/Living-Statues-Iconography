@@ -101,7 +101,7 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Panoramik Banner Kapsayıcısı */
+    /* Hero & Banner */
     .hero-banner {
       width: 100%;
       background: #0d243a;
@@ -181,7 +181,7 @@
 
     /* Canva Embed Stilleri */
     .canva-embed-container {
-      margin-top: 2rem;
+      margin-top: 2.5rem;
       background: #ffffff;
       border: 1px solid #ECE7DE;
       border-radius: 16px;
@@ -228,6 +228,11 @@
       margin-top: auto;
     }
     footer a { color: var(--accent); text-decoration: none; }
+
+    @media (max-width: 768px) {
+      nav { flex-direction: column; gap: 1rem; }
+      .nav-links { flex-wrap: wrap; justify-content: center; }
+    }
   </style>
 </head>
 <body>
@@ -244,11 +249,16 @@
         <button class="nav-btn" onclick="showSection('about', this)">About</button>
         <button class="nav-btn" onclick="showSection('partners', this)">Partners</button>
         <button class="nav-btn" onclick="showSection('activities', this)">Activities</button>
+        <button class="nav-btn" onclick="showSection('gallery', this)">Gallery</button>
+        <button class="nav-btn" onclick="showSection('surveys', this)">Surveys</button>
+        <button class="nav-btn" onclick="showSection('esafety', this)">eSafety</button>
+        <button class="nav-btn" onclick="showSection('connects', this)">Connects</button>
       </div>
+      <button class="lang-switch" onclick="toggleLanguage()">TR / EN</button>
     </div>
   </nav>
 
-  <!-- HOME BÖLÜMÜ -->
+  <!-- 1. HOME BÖLÜMÜ -->
   <main id="home" class="page-section active">
     <div class="hero-banner">
       <img src="banner.png" alt="Living Statues: Iconography of Sports Banner">
@@ -276,7 +286,7 @@
     </div>
   </main>
 
-  <!-- ABOUT BÖLÜMÜ -->
+  <!-- 2. ABOUT BÖLÜMÜ -->
   <section id="about" class="page-section">
     <div class="container">
       <div class="section-head">
@@ -290,7 +300,7 @@
     </div>
   </section>
 
-  <!-- PARTNERS BÖLÜMÜ -->
+  <!-- 3. PARTNERS BÖLÜMÜ -->
   <section id="partners" class="page-section">
     <div class="container">
       <div class="section-head">
@@ -310,7 +320,7 @@
     </div>
   </section>
 
-  <!-- ACTIVITIES BÖLÜMÜ -->
+  <!-- 4. ACTIVITIES BÖLÜMÜ (Discobus Canva Eklendi) -->
   <section id="activities" class="page-section">
     <div class="container">
       <div class="section-head">
@@ -318,7 +328,7 @@
         <p>Our step-by-step implementation plan and creative showcases.</p>
       </div>
 
-      <div class="grid" style="margin-bottom: 2.5rem;">
+      <div class="grid">
         <div class="card">
           <h3>Phase 1: Research & Iconography</h3>
           <p>Students research ancient Greek and Roman sports statues and analyze their historical context.</p>
@@ -343,6 +353,62 @@
     </div>
   </section>
 
+  <!-- 5. GALLERY BÖLÜMÜ -->
+  <section id="gallery" class="page-section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Project Gallery</h2>
+        <p>Visual showcases and student student performances.</p>
+      </div>
+      <div class="card">
+        <h3>Exhibitions & Photos</h3>
+        <p>Student living statue photo shoot sessions and statue poses.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. SURVEYS BÖLÜMÜ -->
+  <section id="surveys" class="page-section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Surveys & Evaluation</h2>
+        <p>Project feedback and evaluation forms.</p>
+      </div>
+      <div class="card">
+        <h3>Project Questionnaires</h3>
+        <p>Initial and final evaluation surveys completed by students and teachers.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. eSAFETY BÖLÜMÜ -->
+  <section id="esafety" class="page-section">
+    <div class="container">
+      <div class="section-head">
+        <h2>eSafety Rules</h2>
+        <p>Internet safety guidelines and digital citizenship.</p>
+      </div>
+      <div class="card">
+        <h3>Safe Internet Policy</h3>
+        <p>Rules and measures for safe collaboration in eTwinning TwinSpace.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. CONNECTS BÖLÜMÜ -->
+  <section id="connects" class="page-section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Connect With Us</h2>
+        <p>Get in touch with project coordinators and partner schools.</p>
+      </div>
+      <div class="card">
+        <h3>Contact Information</h3>
+        <p>Haydarpaşa Lisesi, Üsküdar / İstanbul</p>
+      </div>
+    </div>
+  </section>
+
   <footer>
     <p>&copy; 2026 Living Statues: Iconography of Sports | eTwinning Project • Haydarpaşa Lisesi</p>
   </footer>
@@ -357,6 +423,10 @@
         btnElement.classList.add('active');
       }
       window.scrollTo(0, 0);
+    }
+
+    function toggleLanguage() {
+      alert("Dil değiştirme modu aktif.");
     }
   </script>
 </body>
