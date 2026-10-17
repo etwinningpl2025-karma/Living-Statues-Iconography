@@ -22,7 +22,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0.9rem 5%;
+      padding: 1.1rem 6%;
       background: #fff;
       border-bottom: 1px solid #ECE7DE;
       position: sticky;
@@ -30,32 +30,10 @@
       z-index: 1000;
       box-shadow: 0 2px 8px rgba(0,0,0,0.03);
     }
-    .brand-wrap {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      text-decoration: none;
-      cursor: pointer;
-    }
-    .brand { font-family: 'Playfair Display', serif; font-size: 1.28rem; font-weight: 700; color: var(--primary); }
-    .nav-etwinning-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      background: #f0f7ff;
-      border: 1px solid #bae6fd;
-      padding: 3px 9px;
-      border-radius: 20px;
-      font-size: 0.76rem;
-      font-weight: 700;
-      color: #0369a1;
-      letter-spacing: 0.4px;
-    }
-    .nav-etwinning-pill span { color: #f59e0b; font-size: 0.85rem; }
-
+    .brand { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700; color: var(--primary); text-decoration: none; cursor: pointer; }
     .nav-right { display: flex; align-items: center; gap: 1.2rem; }
     
-    .nav-links { display: flex; gap: 0.35rem; flex-wrap: wrap; }
+    .nav-links { display: flex; gap: 0.4rem; flex-wrap: wrap; }
     .nav-btn {
       background: transparent;
       border: none;
@@ -63,8 +41,8 @@
       font-family: inherit;
       color: #4A5568;
       font-weight: 500;
-      font-size: 0.9rem;
-      padding: 0.45rem 0.75rem;
+      font-size: 0.92rem;
+      padding: 0.45rem 0.8rem;
       border-radius: 6px;
       cursor: pointer;
       transition: all 0.2s ease;
@@ -89,64 +67,34 @@
     }
 
     /* Sayfa Bölümleri */
-    .page-section {
-      display: none;
-      animation: fadeIn 0.3s ease-in-out;
-    }
-    .page-section.active {
-      display: block;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(6px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    .page-section { display: none; }
+    .page-section.active { display: block; }
 
-    /* Panoramik Banner Kapsayıcısı */
+    /* Hero / Home */
     .hero-banner {
       width: 100%;
-      background: #0d243a;
+      background-color: #e2e8f0;
       border-bottom: 3px solid var(--accent);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
     }
     .hero-banner img {
       width: 100%;
-      max-width: 1920px;
-      height: auto;
-      max-height: 560px;
-      object-fit: contain;
+      max-height: 480px;
+      object-fit: cover;
       display: block;
     }
     .hero-text-wrap {
       text-align: center;
-      padding: 2.5rem 1.5rem 1.8rem;
+      padding: 3rem 1.5rem 2rem;
       background: #fff;
     }
-    .etwinning-hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: linear-gradient(135deg, #15375B 0%, #0284c7 100%);
-      color: #ffffff;
-      padding: 6px 16px;
-      border-radius: 30px;
-      font-size: 0.82rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      margin-bottom: 0.8rem;
-      box-shadow: 0 3px 10px rgba(2, 132, 199, 0.25);
-    }
-    .etwinning-hero-badge .star-icon { color: #facc15; font-size: 1rem; }
     .badge {
-      display: block;
+      display: inline-block;
       text-transform: uppercase;
       letter-spacing: 1.5px;
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       font-weight: 700;
       color: var(--accent);
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.5rem;
     }
     .title {
       font-family: 'Playfair Display', serif;
@@ -161,12 +109,13 @@
       font-size: 1.2rem;
     }
 
-    /* Konteyner & Grid */
-    .container { max-width: 1100px; margin: 0 auto; padding: 2.8rem 1.5rem 4rem; flex: 1; width: 100%; }
-    .section-head { text-align: center; margin-bottom: 2.8rem; }
+    /* Genel Konteyner */
+    .container { max-width: 1100px; margin: 0 auto; padding: 3.5rem 1.5rem; flex: 1; width: 100%; }
+    .section-head { text-align: center; margin-bottom: 3rem; }
     .section-head h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--primary); margin-bottom: 0.5rem; }
-    .section-head p { color: var(--muted); font-size: 1.05rem; }
+    .section-head p { color: var(--muted); font-size: 1rem; }
 
+    /* Izgara Kartları */
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.8rem; }
     .card {
       background: var(--card-bg);
@@ -179,9 +128,17 @@
     }
     .card h3 { font-family: 'Playfair Display', serif; color: var(--primary); margin-bottom: 0.6rem; font-size: 1.25rem; }
 
-    /* İstatistikler */
-    .stats-container { margin-top: 3.5rem; padding-top: 2.5rem; border-top: 1px solid #ECE7DE; }
-    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+    /* İstatistik Kartları */
+    .stats-container {
+      margin-top: 3.5rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid #ECE7DE;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
     .stat-card {
       background: #ffffff;
       border: 1px solid #ECE7DE;
@@ -194,8 +151,21 @@
       align-items: center;
       justify-content: center;
     }
-    .stat-number { font-family: 'Playfair Display', serif; font-size: 2.3rem; font-weight: 700; color: var(--primary); margin-bottom: 0.3rem; }
-    .stat-label { font-size: 0.95rem; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.4rem; }
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.3rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.3rem;
+    }
+    .stat-label {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.4rem;
+    }
     .stat-subtext { font-size: 0.88rem; color: var(--muted); }
     .counter-badge {
       display: inline-flex;
@@ -210,7 +180,7 @@
       margin-top: 0.5rem;
     }
 
-    /* Ortaklar */
+    /* Partners */
     .partner-role {
       display: inline-block;
       font-size: 0.75rem;
@@ -226,7 +196,13 @@
     }
     .partner-school { font-weight: 600; color: var(--text); margin-bottom: 0.2rem; font-size: 1rem; }
     .partner-country { font-size: 0.9rem; color: var(--muted); margin-bottom: 1.2rem; }
-    .school-web-info { margin-top: auto; display: flex; flex-direction: column; gap: 0.4rem; }
+    
+    .school-web-info {
+      margin-top: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
     .school-link {
       display: inline-flex;
       align-items: center;
@@ -241,34 +217,54 @@
       transition: all 0.2s ease;
       align-self: flex-start;
     }
-    .school-link:hover { background: #0d233a; transform: translateY(-2px); }
+    .school-link:hover {
+      background: #0d233a;
+      transform: translateY(-2px);
+    }
     .school-url-text { font-size: 0.8rem; color: var(--muted); word-break: break-all; }
 
-    /* Canva Embed Stilleri */
-    .canva-embed-container {
-      margin-top: 2.5rem;
+    /* Padlet Bölümü */
+    .padlet-wrapper {
+      margin-top: 4rem;
       background: #ffffff;
       border: 1px solid #ECE7DE;
       border-radius: 16px;
-      padding: 1.5rem;
+      padding: 2.2rem;
       box-shadow: 0 4px 15px rgba(0,0,0,0.03);
     }
-    .canva-frame {
-      width: 100%;
-      height: 600px;
-      border: 1px solid #cbd5e1;
-      border-radius: 12px;
-      background: #f8fafc;
+    .padlet-nav-tabs {
+      display: flex;
+      gap: 0.8rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 2px solid #ECE7DE;
+      padding-bottom: 1rem;
+      flex-wrap: wrap;
     }
-    .canva-action-bar {
+    .padlet-tab-btn {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      padding: 0.65rem 1.3rem;
+      border-radius: 30px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: #4a5568;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .padlet-tab-btn:hover { background: #e2e8f0; color: var(--primary); }
+    .padlet-tab-btn.active { background: var(--primary); color: #ffffff; border-color: var(--primary); }
+    .padlet-pane { display: none; }
+    .padlet-pane.active { display: block; }
+    .padlet-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 1rem;
+      margin-bottom: 1.2rem;
       flex-wrap: wrap;
       gap: 1rem;
     }
-    .canva-action-btn {
+    .padlet-header h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--primary); }
+    .padlet-btn {
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
@@ -282,260 +278,147 @@
       border-radius: 6px;
       transition: all 0.2s ease;
     }
-    .canva-action-btn:hover { background: var(--primary); color: #fff; }
+    .padlet-btn:hover { background: var(--primary); color: #fff; }
+    .padlet-frame {
+      width: 100%;
+      height: 600px;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      display: block;
+    }
 
-    footer {
-      text-align: center;
-      padding: 2.2rem 1rem;
+    /* Activities */
+    .month-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1px;
       background: var(--primary);
-      color: #E2E8F0;
+      color: #ffffff;
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-bottom: 0.8rem;
+      align-self: flex-start;
+    }
+    .activity-list { list-style: none; padding: 0; margin-top: 0.5rem; }
+    .activity-list li {
+      position: relative;
+      padding-left: 1.3rem;
+      margin-bottom: 0.6rem;
+      font-size: 0.92rem;
+      color: var(--text);
+      line-height: 1.5;
+    }
+    .activity-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: bold;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    /* Galeri */
+    .gallery-filter-wrap {
+      display: flex;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .gallery-filter-btn {
+      background: #fff;
+      border: 1px solid #cbd5e1;
+      padding: 0.55rem 1.2rem;
+      border-radius: 24px;
       font-size: 0.9rem;
-      margin-top: auto;
+      font-weight: 600;
+      color: #4a5568;
+      cursor: pointer;
+      transition: all 0.2s ease;
     }
-    footer a { color: var(--accent); text-decoration: none; }
-
-    @media (max-width: 768px) {
-      nav { flex-direction: column; gap: 1rem; }
-      .nav-links { flex-wrap: wrap; justify-content: center; }
+    .gallery-filter-btn:hover { background: #f1f5f9; color: var(--primary); }
+    .gallery-filter-btn.active { background: var(--primary); color: #ffffff; border-color: var(--primary); }
+    .art-card {
+      background: #ffffff;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid #ECE7DE;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-  </style>
-</head>
-<body>
+    .art-card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.06); }
+    .art-visual {
+      background: linear-gradient(135deg, #15375B 0%, #2a4365 100%);
+      color: #FDFBF7;
+      height: 190px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1.5rem;
+      position: relative;
+    }
+    .art-visual-icon { font-size: 2.6rem; margin-bottom: 0.4rem; }
+    .art-origin-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(197, 160, 89, 0.9);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .art-details { padding: 1.5rem; display: flex; flex-direction: column; flex: 1; }
+    .art-details h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--primary); margin-bottom: 0.4rem; }
+    .art-meta { font-size: 0.82rem; font-weight: 600; color: var(--accent); margin-bottom: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px; }
+    .art-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.5; margin-bottom: 1rem; }
+    .art-tag-list { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: auto; }
+    .art-tag { background: #f1f5f9; color: var(--primary); font-size: 0.75rem; font-weight: 600; padding: 3px 8px; border-radius: 4px; }
 
-  <!-- Navigasyon -->
-  <nav>
-    <div class="brand-wrap" onclick="showSection('home')">
-      <span class="brand">🏛️ Living Statues</span>
-      <span class="nav-etwinning-pill"><span>★</span> eTwinning Project</span>
-    </div>
-    <div class="nav-right">
-      <div class="nav-links">
-        <button class="nav-btn active" onclick="showSection('home')" data-en="Home" data-tr="Ana Sayfa">Home</button>
-        <button class="nav-btn" onclick="showSection('about')" data-en="About" data-tr="Hakkında">About</button>
-        <button class="nav-btn" onclick="showSection('partners')" data-en="Partners" data-tr="Ortaklar">Partners</button>
-        <button class="nav-btn" onclick="showSection('activities')" data-en="Activities" data-tr="Etkinlikler">Activities</button>
-        <button class="nav-btn" onclick="showSection('gallery')" data-en="Gallery" data-tr="Galeri">Gallery</button>
-        <button class="nav-btn" onclick="showSection('surveys')" data-en="Surveys" data-tr="Anketler">Surveys</button>
-        <button class="nav-btn" onclick="showSection('esafety')" data-en="eSafety" data-tr="e-Güvenlik">eSafety</button>
-        <button class="nav-btn" onclick="showSection('connects')" data-en="Connects" data-tr="İletişim">Connects</button>
-      </div>
-      <button class="lang-switch" onclick="toggleLanguage()">TR / EN</button>
-    </div>
-  </nav>
-
-  <!-- 1. HOME BÖLÜMÜ -->
-  <main id="home" class="page-section active">
-    <div class="hero-banner">
-      <img src="banner.png" alt="Living Statues: Iconography of Sports Banner">
-    </div>
-    <div class="hero-text-wrap">
-      <div class="etwinning-hero-badge">
-        <span class="star-icon">★</span> OFFICIAL eTWINNING PROJECT <span class="star-icon">★</span>
-      </div>
-      <span class="badge" data-en="European School Collaboration • Age: 14-18" data-tr="Avrupa Okul İş Birliği Projesi • Yaş: 14-18">European School Collaboration • Age: 14-18</span>
-      <h1 class="title">Living Statues</h1>
-      <h2 class="subtitle" data-en="Iconography of Sports from Antiquity to Modern Era" data-tr="Antik Çağ'dan Modern Döneme Spor İkonografisi">Iconography of Sports from Antiquity to Modern Era</h2>
-    </div>
-    
-    <div class="container" style="padding-top: 1rem;">
-      <div class="grid">
-        <div class="card" onclick="showSection('about')" style="cursor: pointer; text-align: center;">
-          <h3 data-en="📖 Discover Our Project" data-tr="📖 Projeyi Keşfedin">📖 Discover Our Project</h3>
-          <p data-en="Learn about our interdisciplinary curriculum integrating physical education, arts, anatomy, and digital media." data-tr="Beden eğitimi, sanat, anatomi ve dijital medyayı birleştiren disiplinlerarası programımızı öğrenin.">Learn about our interdisciplinary curriculum integrating physical education, arts, anatomy, and digital media.</p>
-        </div>
-        <div class="card" onclick="showSection('activities')" style="cursor: pointer; text-align: center;">
-          <h3 data-en="🗓️ 4-Month Roadmap" data-tr="🗓️ 4 Aylık Plan">🗓️ 4-Month Roadmap</h3>
-          <p data-en="Explore our step-by-step tasks from orientation to the final 3D virtual museum exhibition." data-tr="Tanışmadan 3D sanal müze sergisine kadar adım adım uygulama takvimimizi inceleyin.">Explore our step-by-step tasks from orientation to the final 3D virtual museum exhibition.</p>
-        </div>
-        <div class="card" onclick="showSection('surveys')" style="cursor: pointer; text-align: center;">
-          <h3 data-en="📊 Surveys & Pre-Test" data-tr="📊 Anketler & Ön Test">📊 Surveys & Pre-Test</h3>
-          <p data-en="Participate in our student pre-project evaluation survey to measure initial awareness." data-tr="Öğrenci başlangıç farkındalığını ölçen proje ön değerlendirme anketimize katılın.">Participate in our student pre-project evaluation survey to measure initial awareness.</p>
-        </div>
-      </div>
-
-      <div class="stats-container">
-        <div class="stats-grid">
-          <div class="stat-card">
-            <div class="stat-number">3</div>
-            <div class="stat-label" data-en="Countries" data-tr="Ülke">Countries</div>
-            <div class="stat-subtext">🇹🇷 Türkiye • 🇷🇴 Romania • 🇷🇸 Serbia</div>
-          </div>
-
-          <div class="stat-card" onclick="showSection('partners')" style="cursor: pointer;">
-            <div class="stat-number">5</div>
-            <div class="stat-label" data-en="Total Partners" data-tr="Toplam Ortak">Total Partners</div>
-            <div class="stat-subtext" data-en="Coordinating Schools & Educators" data-tr="Koordinatör Okullar ve Eğitimciler">Coordinating Schools & Educators</div>
-          </div>
-
-          <div class="stat-card">
-            <div class="stat-number" id="visitor-count">1,248</div>
-            <div class="stat-label" data-en="Total Visitors" data-tr="Toplam Ziyaretçi">Total Visitors</div>
-            <div class="counter-badge">
-              🟢 <span data-en="Live Visitor Tracker" data-tr="Canlı Ziyaretçi Sayacı">Live Visitor Tracker</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </main>
-
-  <!-- 2. ABOUT BÖLÜMÜ -->
-  <section id="about" class="page-section">
-    <div class="container">
-      <div class="section-head">
-        <h2>About the Project</h2>
-        <p>Bridging classical art history and physical education through creative student expression.</p>
-      </div>
-      <div class="grid">
-        <div class="card">
-          <h3>🏺 Sculptural Iconography</h3>
-          <p>Investigating classical sports sculptures, aesthetic ideals, and the representation of athletic motion across European history.</p>
-        </div>
-        <div class="card">
-          <h3>⚡ Functional Anatomy</h3>
-          <p>Analyzing agonist/antagonist muscle groups, joint alignments, and biomechanical principles behind ancient athletic poses.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 3. PARTNERS BÖLÜMÜ -->
-  <section id="partners" class="page-section">
-    <div class="container">
-      <div class="section-head">
-        <h2>Project Partners</h2>
-        <p>Collaborating schools across Europe.</p>
-      </div>
-      <div class="grid">
-        <div class="card">
-          <span class="partner-role">Coordinator</span>
-          <h3 class="partner-school">Haydarpaşa Lisesi</h3>
-          <p class="partner-country">Türkiye / İstanbul</p>
-        </div>
-        <div class="card">
-          <span class="partner-role">Partner School</span>
-          <h3 class="partner-school">European Partner Schools</h3>
-          <p class="partner-country">Romania, Serbia, Croatia & Spain</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 4. ACTIVITIES BÖLÜMÜ (Discobus Canva Eklendi) -->
-  <section id="activities" class="page-section">
-    <div class="container">
-      <div class="section-head">
-        <h2>Activities & Milestones</h2>
-        <p>Our step-by-step implementation plan and creative showcases.</p>
-      </div>
-
-      <div class="grid">
-        <div class="card">
-          <h3>Phase 1: Research & Iconography</h3>
-          <p>Students research ancient Greek and Roman sports statues and analyze their historical context.</p>
-        </div>
-        <div class="card">
-          <h3>Phase 2: Living Statue Performances</h3>
-          <p>Costuming, physical posture rehearsals, and photo/video documentations depicting historical athletes.</p>
-        </div>
-      </div>
-
-      <!-- Discobus Canva Aktivitesi -->
-      <div class="canva-embed-container">
-        <div class="canva-action-bar">
-          <h3 style="font-family: 'Playfair Display', serif; color: var(--primary);">🎵 Discobus Activity Presentation</h3>
-          <a href="https://www.canva.com/design/DAHXsvWDvLA/v48j9W1hGUb-mFUM0JN6IQ/view" target="_blank" class="canva-action-btn">
-            🔗 Open in Canva (Full Screen)
-          </a>
-        </div>
-        <iframe loading="lazy" class="canva-frame" src="https://www.canva.com/design/DAHXsvWDvLA/v48j9W1hGUb-mFUM0JN6IQ/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- 5. GALLERY BÖLÜMÜ -->
-  <section id="gallery" class="page-section">
-    <div class="container">
-      <div class="section-head">
-        <h2>Project Gallery</h2>
-        <p>Visual showcases and student performances.</p>
-      </div>
-      <div class="card">
-        <h3>Exhibitions & Photos</h3>
-        <p>Student living statue photo shoot sessions and statue poses.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 6. SURVEYS BÖLÜMÜ -->
-  <section id="surveys" class="page-section">
-    <div class="container">
-      <div class="section-head">
-        <h2>Surveys & Evaluation</h2>
-        <p>Project feedback and evaluation forms.</p>
-      </div>
-      <div class="card">
-        <h3>Project Questionnaires</h3>
-        <p>Initial and final evaluation surveys completed by students and teachers.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 7. eSAFETY BÖLÜMÜ -->
-  <section id="esafety" class="page-section">
-    <div class="container">
-      <div class="section-head">
-        <h2>eSafety Rules</h2>
-        <p>Internet safety guidelines and digital citizenship.</p>
-      </div>
-      <div class="card">
-        <h3>Safe Internet Policy</h3>
-        <p>Rules and measures for safe collaboration in eTwinning TwinSpace.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 8. CONNECTS BÖLÜMÜ -->
-  <section id="connects" class="page-section">
-    <div class="container">
-      <div class="section-head">
-        <h2>Connect With Us</h2>
-        <p>Get in touch with project coordinators and partner schools.</p>
-      </div>
-      <div class="card">
-        <h3>Contact Information</h3>
-        <p>Haydarpaşa Lisesi, Üsküdar / İstanbul</p>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2026 Living Statues: Iconography of Sports | eTwinning Project • Haydarpaşa Lisesi</p>
-  </footer>
-
-  <script>
-    function showSection(sectionId) {
-      document.querySelectorAll('.page-section').forEach(sec => sec.classList.remove('active'));
-      document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
-      
-      const targetSection = document.getElementById(sectionId);
-      if (targetSection) {
-        targetSection.classList.add('active');
-      }
-      
-      document.querySelectorAll('.nav-btn').forEach(btn => {
-        if (btn.getAttribute('onclick') && btn.getAttribute('onclick').includes(sectionId)) {
-          btn.classList.add('active');
-        }
-      });
-
-      window.scrollTo(0, 0);
+    /* Surveys Akordeon Kartları */
+    .survey-accordion {
+      background: #ffffff;
+      border: 1px solid #ECE7DE;
+      border-radius: 14px;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+      overflow: hidden;
+    }
+    .survey-header {
+      padding: 1.5rem 2rem;
+      background: #f8fafc;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--primary);
+      font-weight: 700;
+      transition: background 0.2s ease;
+    }
+    .survey-header:hover { background: #f1f5f9; }
+    .survey-content {
+      display: none;
+      padding: 1.5rem;
+      border-top: 1px solid #ECE7DE;
+    }
+    .form-iframe {
+      width: 100%;
+      height: 650px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      background: #f8fafc;
     }
 
-    function toggleLanguage() {
-      // Dil değişim fonksiyonu
-    }
-  </script>
-</body>
-</html>
+    /* eSafety Canva Embed */
+    .canva-embed-container {
