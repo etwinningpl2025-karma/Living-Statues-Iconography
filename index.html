@@ -227,3 +227,315 @@
     .partner-school { font-weight: 600; color: var(--text); margin-bottom: 0.2rem; font-size: 1rem; }
     .partner-country { font-size: 0.9rem; color: var(--muted); margin-bottom: 1.2rem; }
     .school-web-info { margin-top: auto; display: flex; flex-direction: column; gap: 0.4rem; }
+    .school-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #ffffff;
+      background: var(--primary);
+      text-decoration: none;
+      padding: 0.6rem 1rem;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+      align-self: flex-start;
+    }
+    .school-link:hover { background: #0d233a; transform: translateY(-2px); }
+    .school-url-text { font-size: 0.8rem; color: var(--muted); word-break: break-all; }
+
+    /* Canva Embed Stilleri */
+    .canva-embed-container {
+      margin-top: 2.5rem;
+      background: #ffffff;
+      border: 1px solid #ECE7DE;
+      border-radius: 16px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    }
+    .canva-frame {
+      width: 100%;
+      height: 600px;
+      border: 1px solid #cbd5e1;
+      border-radius: 12px;
+      background: #f8fafc;
+    }
+    .canva-action-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .canva-action-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--primary);
+      text-decoration: none;
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+    }
+    .canva-action-btn:hover { background: var(--primary); color: #fff; }
+
+    footer {
+      text-align: center;
+      padding: 2.2rem 1rem;
+      background: var(--primary);
+      color: #E2E8F0;
+      font-size: 0.9rem;
+      margin-top: auto;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    @media (max-width: 768px) {
+      nav { flex-direction: column; gap: 1rem; }
+      .nav-links { flex-wrap: wrap; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigasyon -->
+  <nav>
+    <div class="brand-wrap" onclick="showSection('home')">
+      <span class="brand">🏛️ Living Statues</span>
+      <span class="nav-etwinning-pill"><span>★</span> eTwinning Project</span>
+    </div>
+    <div class="nav-right">
+      <div class="nav-links">
+        <button class="nav-btn active" onclick="showSection('home')" data-en="Home" data-tr="Ana Sayfa">Home</button>
+        <button class="nav-btn" onclick="showSection('about')" data-en="About" data-tr="Hakkında">About</button>
+        <button class="nav-btn" onclick="showSection('partners')" data-en="Partners" data-tr="Ortaklar">Partners</button>
+        <button class="nav-btn" onclick="showSection('activities')" data-en="Activities" data-tr="Etkinlikler">Activities</button>
+        <button class="nav-btn" onclick="showSection('gallery')" data-en="Gallery" data-tr="Galeri">Gallery</button>
+        <button class="nav-btn" onclick="showSection('surveys')" data-en="Surveys" data-tr="Anketler">Surveys</button>
+        <button class="nav-btn" onclick="showSection('esafety')" data-en="eSafety" data-tr="e-Güvenlik">eSafety</button>
+        <button class="nav-btn" onclick="showSection('connects')" data-en="Connects" data-tr="İletişim">Connects</button>
+      </div>
+      <button class="lang-switch" onclick="toggleLanguage()">TR / EN</button>
+    </div>
+  </nav>
+
+  <!-- 1. HOME BÖLÜMÜ -->
+  <main id="home" class="page-section active">
+    <div class="hero-banner">
+      <img src="banner.png" alt="Living Statues: Iconography of Sports Banner">
+    </div>
+    <div class="hero-text-wrap">
+      <div class="etwinning-hero-badge">
+        <span class="star-icon">★</span> OFFICIAL eTWINNING PROJECT <span class="star-icon">★</span>
+      </div>
+      <span class="badge" data-en="European School Collaboration • Age: 14-18" data-tr="Avrupa Okul İş Birliği Projesi • Yaş: 14-18">European School Collaboration • Age: 14-18</span>
+      <h1 class="title">Living Statues</h1>
+      <h2 class="subtitle" data-en="Iconography of Sports from Antiquity to Modern Era" data-tr="Antik Çağ'dan Modern Döneme Spor İkonografisi">Iconography of Sports from Antiquity to Modern Era</h2>
+    </div>
+    
+    <div class="container" style="padding-top: 1rem;">
+      <div class="grid">
+        <div class="card" onclick="showSection('about')" style="cursor: pointer; text-align: center;">
+          <h3 data-en="📖 Discover Our Project" data-tr="📖 Projeyi Keşfedin">📖 Discover Our Project</h3>
+          <p data-en="Learn about our interdisciplinary curriculum integrating physical education, arts, anatomy, and digital media." data-tr="Beden eğitimi, sanat, anatomi ve dijital medyayı birleştiren disiplinlerarası programımızı öğrenin.">Learn about our interdisciplinary curriculum integrating physical education, arts, anatomy, and digital media.</p>
+        </div>
+        <div class="card" onclick="showSection('activities')" style="cursor: pointer; text-align: center;">
+          <h3 data-en="🗓️ 4-Month Roadmap" data-tr="🗓️ 4 Aylık Plan">🗓️ 4-Month Roadmap</h3>
+          <p data-en="Explore our step-by-step tasks from orientation to the final 3D virtual museum exhibition." data-tr="Tanışmadan 3D sanal müze sergisine kadar adım adım uygulama takvimimizi inceleyin.">Explore our step-by-step tasks from orientation to the final 3D virtual museum exhibition.</p>
+        </div>
+        <div class="card" onclick="showSection('surveys')" style="cursor: pointer; text-align: center;">
+          <h3 data-en="📊 Surveys & Pre-Test" data-tr="📊 Anketler & Ön Test">📊 Surveys & Pre-Test</h3>
+          <p data-en="Participate in our student pre-project evaluation survey to measure initial awareness." data-tr="Öğrenci başlangıç farkındalığını ölçen proje ön değerlendirme anketimize katılın.">Participate in our student pre-project evaluation survey to measure initial awareness.</p>
+        </div>
+      </div>
+
+      <div class="stats-container">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number">3</div>
+            <div class="stat-label" data-en="Countries" data-tr="Ülke">Countries</div>
+            <div class="stat-subtext">🇹🇷 Türkiye • 🇷🇴 Romania • 🇷🇸 Serbia</div>
+          </div>
+
+          <div class="stat-card" onclick="showSection('partners')" style="cursor: pointer;">
+            <div class="stat-number">5</div>
+            <div class="stat-label" data-en="Total Partners" data-tr="Toplam Ortak">Total Partners</div>
+            <div class="stat-subtext" data-en="Coordinating Schools & Educators" data-tr="Koordinatör Okullar ve Eğitimciler">Coordinating Schools & Educators</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-number" id="visitor-count">1,248</div>
+            <div class="stat-label" data-en="Total Visitors" data-tr="Toplam Ziyaretçi">Total Visitors</div>
+            <div class="counter-badge">
+              🟢 <span data-en="Live Visitor Tracker" data-tr="Canlı Ziyaretçi Sayacı">Live Visitor Tracker</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- 2. ABOUT BÖLÜMÜ -->
+  <section id="about" class="page-section">
+    <div class="container">
+      <div class="section-head">
+        <h2>About the Project</h2>
+        <p>Bridging classical art history and physical education through creative student expression.</p>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <h3>🏺 Sculptural Iconography</h3>
+          <p>Investigating classical sports sculptures, aesthetic ideals, and the representation of athletic motion across European history.</p>
+        </div>
+        <div class="card">
+          <h3>⚡ Functional Anatomy</h3>
+          <p>Analyzing agonist/antagonist muscle groups, joint alignments, and biomechanical principles behind ancient athletic poses.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. PARTNERS BÖLÜMÜ -->
+  <section id="partners" class="page-section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Project Partners</h2>
+        <p>Collaborating schools across Europe.</p>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <span class="partner-role">Coordinator</span>
+          <h3 class="partner-school">Haydarpaşa Lisesi</h3>
+          <p class="partner-country">Türkiye / İstanbul</p>
+        </div>
+        <div class="card">
+          <span class="partner-role">Partner School</span>
+          <h3 class="partner-school">European Partner Schools</h3>
+          <p class="partner-country">Romania, Serbia, Croatia & Spain</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. ACTIVITIES BÖLÜMÜ (Discobus Canva Eklendi) -->
+  <section id="activities" class="page-section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Activities & Milestones</h2>
+        <p>Our step-by-step implementation plan and creative showcases.</p>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Phase 1: Research & Iconography</h3>
+          <p>Students research ancient Greek and Roman sports statues and analyze their historical context.</p>
+        </div>
+        <div class="card">
+          <h3>Phase 2: Living Statue Performances</h3>
+          <p>Costuming, physical posture rehearsals, and photo/video documentations depicting historical athletes.</p>
+        </div>
+      </div>
+
+      <!-- Discobus Canva Aktivitesi -->
+      <div class="canva-embed-container">
+        <div class="canva-action-bar">
+          <h3 style="font-family: 'Playfair Display', serif; color: var(--primary);">🎵 Discobus Activity Presentation</h3>
+          <a href="https://www.canva.com/design/DAHXsvWDvLA/v48j9W1hGUb-mFUM0JN6IQ/view" target="_blank" class="canva-action-btn">
+            🔗 Open in Canva (Full Screen)
+          </a>
+        </div>
+        <iframe loading="lazy" class="canva-frame" src="https://www.canva.com/design/DAHXsvWDvLA/v48j9W1hGUb-mFUM0JN6IQ/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 5. GALLERY BÖLÜMÜ -->
+  <section id="gallery" class="page-section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Project Gallery</h2>
+        <p>Visual showcases and student performances.</p>
+      </div>
+      <div class="card">
+        <h3>Exhibitions & Photos</h3>
+        <p>Student living statue photo shoot sessions and statue poses.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. SURVEYS BÖLÜMÜ -->
+  <section id="surveys" class="page-section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Surveys & Evaluation</h2>
+        <p>Project feedback and evaluation forms.</p>
+      </div>
+      <div class="card">
+        <h3>Project Questionnaires</h3>
+        <p>Initial and final evaluation surveys completed by students and teachers.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. eSAFETY BÖLÜMÜ -->
+  <section id="esafety" class="page-section">
+    <div class="container">
+      <div class="section-head">
+        <h2>eSafety Rules</h2>
+        <p>Internet safety guidelines and digital citizenship.</p>
+      </div>
+      <div class="card">
+        <h3>Safe Internet Policy</h3>
+        <p>Rules and measures for safe collaboration in eTwinning TwinSpace.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. CONNECTS BÖLÜMÜ -->
+  <section id="connects" class="page-section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Connect With Us</h2>
+        <p>Get in touch with project coordinators and partner schools.</p>
+      </div>
+      <div class="card">
+        <h3>Contact Information</h3>
+        <p>Haydarpaşa Lisesi, Üsküdar / İstanbul</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Living Statues: Iconography of Sports | eTwinning Project • Haydarpaşa Lisesi</p>
+  </footer>
+
+  <script>
+    function showSection(sectionId) {
+      document.querySelectorAll('.page-section').forEach(sec => sec.classList.remove('active'));
+      document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+      
+      const targetSection = document.getElementById(sectionId);
+      if (targetSection) {
+        targetSection.classList.add('active');
+      }
+      
+      document.querySelectorAll('.nav-btn').forEach(btn => {
+        if (btn.getAttribute('onclick') && btn.getAttribute('onclick').includes(sectionId)) {
+          btn.classList.add('active');
+        }
+      });
+
+      window.scrollTo(0, 0);
+    }
+
+    function toggleLanguage() {
+      // Dil değişim fonksiyonu
+    }
+  </script>
+</body>
+</html>
