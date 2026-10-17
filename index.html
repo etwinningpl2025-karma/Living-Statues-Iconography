@@ -511,4 +511,31 @@
       .buttons-wrap { justify-content: center; }
       .padlet-frame { height: 500px; }
       .canva-box { text-align: center; justify-content: center; }
-      .stats-grid { grid-
+      .stats-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigasyon -->
+  <nav>
+    <div class="brand-wrap" onclick="showSection('home')">
+      <span class="brand">🏛️ Living Statues</span>
+      <span class="nav-etwinning-pill"><span>★</span> eTwinning Project</span>
+    </div>
+    <div class="nav-right">
+      <div class="nav-links">
+        <button class="nav-btn active" onclick="showSection('home')" data-en="Home" data-tr="Ana Sayfa">Home</button>
+        <button class="nav-btn" onclick="showSection('about')" data-en="About" data-tr="Hakkında">About</button>
+        <button class="nav-btn" onclick="showSection('partners')" data-en="Partners" data-tr="Ortaklar">Partners</button>
+        <button class="nav-btn" onclick="showSection('activities')" data-en="Activities" data-tr="Etkinlikler">Activities</button>
+        <button class="nav-btn" onclick="showSection('gallery')" data-en="Gallery" data-tr="Galeri">Gallery</button>
+        <button class="nav-btn" onclick="showSection('surveys')" data-en="Surveys" data-tr="Anketler">Surveys</button>
+        <button class="nav-btn" onclick="showSection('esafety')" data-en="eSafety" data-tr="e-Güvenlik">eSafety</button>
+        <button class="nav-btn" onclick="showSection('connects')" data-en="Connects" data-tr="İletişim">Connects</button>
+      </div>
+      <button class="lang-switch" onclick="toggleLanguage()">TR / EN</button>
+    </div>
+  </nav>
+
+  <!--
