@@ -54,18 +54,6 @@
       font-weight: 600;
     }
 
-    .lang-switch {
-      background: #edf2f7;
-      border: 1px solid #cbd5e1;
-      border-radius: 20px;
-      padding: 5px 12px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      cursor: pointer;
-      color: var(--primary);
-      white-space: nowrap;
-    }
-
     /* Sayfa Bölümleri */
     .page-section { display: none; }
     .page-section.active { display: block; }
@@ -128,297 +116,123 @@
     }
     .card h3 { font-family: 'Playfair Display', serif; color: var(--primary); margin-bottom: 0.6rem; font-size: 1.25rem; }
 
-    /* İstatistik Kartları */
-    .stats-container {
-      margin-top: 3.5rem;
-      padding-top: 2.5rem;
-      border-top: 1px solid #ECE7DE;
-    }
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-    }
-    .stat-card {
-      background: #ffffff;
-      border: 1px solid #ECE7DE;
-      border-radius: 14px;
-      padding: 1.8rem;
-      text-align: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-    .stat-number {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.3rem;
-      font-weight: 700;
-      color: var(--primary);
-      margin-bottom: 0.3rem;
-    }
-    .stat-label {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 0.4rem;
-    }
-    .stat-subtext { font-size: 0.88rem; color: var(--muted); }
-    .counter-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      background: #eef2f6;
-      color: var(--primary);
-      padding: 4px 12px;
-      border-radius: 20px;
-      font-weight: 700;
-      font-size: 0.85rem;
-      margin-top: 0.5rem;
-    }
-
-    /* Partners */
-    .partner-role {
-      display: inline-block;
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      background: #eef2f6;
-      color: var(--primary);
-      padding: 3px 8px;
-      border-radius: 4px;
-      margin-bottom: 0.8rem;
-      align-self: flex-start;
-    }
-    .partner-school { font-weight: 600; color: var(--text); margin-bottom: 0.2rem; font-size: 1rem; }
-    .partner-country { font-size: 0.9rem; color: var(--muted); margin-bottom: 1.2rem; }
-    
-    .school-web-info {
-      margin-top: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-    }
-    .school-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: #ffffff;
+    /* Footer */
+    footer {
       background: var(--primary);
-      text-decoration: none;
-      padding: 0.6rem 1rem;
-      border-radius: 6px;
-      transition: all 0.2s ease;
-      align-self: flex-start;
-    }
-    .school-link:hover {
-      background: #0d233a;
-      transform: translateY(-2px);
-    }
-    .school-url-text { font-size: 0.8rem; color: var(--muted); word-break: break-all; }
-
-    /* Padlet Bölümü */
-    .padlet-wrapper {
-      margin-top: 4rem;
-      background: #ffffff;
-      border: 1px solid #ECE7DE;
-      border-radius: 16px;
-      padding: 2.2rem;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-    }
-    .padlet-nav-tabs {
-      display: flex;
-      gap: 0.8rem;
-      margin-bottom: 1.5rem;
-      border-bottom: 2px solid #ECE7DE;
-      padding-bottom: 1rem;
-      flex-wrap: wrap;
-    }
-    .padlet-tab-btn {
-      background: #f8fafc;
-      border: 1px solid #cbd5e1;
-      padding: 0.65rem 1.3rem;
-      border-radius: 30px;
-      font-size: 0.92rem;
-      font-weight: 600;
-      color: #4a5568;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-    .padlet-tab-btn:hover { background: #e2e8f0; color: var(--primary); }
-    .padlet-tab-btn.active { background: var(--primary); color: #ffffff; border-color: var(--primary); }
-    .padlet-pane { display: none; }
-    .padlet-pane.active { display: block; }
-    .padlet-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1.2rem;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-    .padlet-header h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--primary); }
-    .padlet-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--primary);
-      text-decoration: none;
-      background: #f8fafc;
-      border: 1px solid #cbd5e1;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      transition: all 0.2s ease;
-    }
-    .padlet-btn:hover { background: var(--primary); color: #fff; }
-    .padlet-frame {
-      width: 100%;
-      height: 600px;
-      border-radius: 12px;
-      border: 1px solid #e2e8f0;
-      display: block;
-    }
-
-    /* Activities */
-    .month-badge {
-      display: inline-block;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      background: var(--primary);
-      color: #ffffff;
-      padding: 4px 10px;
-      border-radius: 20px;
-      margin-bottom: 0.8rem;
-      align-self: flex-start;
-    }
-    .activity-list { list-style: none; padding: 0; margin-top: 0.5rem; }
-    .activity-list li {
-      position: relative;
-      padding-left: 1.3rem;
-      margin-bottom: 0.6rem;
-      font-size: 0.92rem;
-      color: var(--text);
-      line-height: 1.5;
-    }
-    .activity-list li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-      font-weight: bold;
-      font-size: 1.2rem;
-      line-height: 1;
-    }
-
-    /* Galeri */
-    .gallery-filter-wrap {
-      display: flex;
-      justify-content: center;
-      gap: 0.6rem;
-      margin-bottom: 2.5rem;
-      flex-wrap: wrap;
-    }
-    .gallery-filter-btn {
-      background: #fff;
-      border: 1px solid #cbd5e1;
-      padding: 0.55rem 1.2rem;
-      border-radius: 24px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: #4a5568;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-    .gallery-filter-btn:hover { background: #f1f5f9; color: var(--primary); }
-    .gallery-filter-btn.active { background: var(--primary); color: #ffffff; border-color: var(--primary); }
-    .art-card {
-      background: #ffffff;
-      border-radius: 14px;
-      overflow: hidden;
-      border: 1px solid #ECE7DE;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .art-card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.06); }
-    .art-visual {
-      background: linear-gradient(135deg, #15375B 0%, #2a4365 100%);
-      color: #FDFBF7;
-      height: 190px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 1.5rem;
-      position: relative;
-    }
-    .art-visual-icon { font-size: 2.6rem; margin-bottom: 0.4rem; }
-    .art-origin-badge {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      background: rgba(197, 160, 89, 0.9);
       color: #fff;
-      font-size: 0.72rem;
-      font-weight: 700;
-      padding: 2px 8px;
-      border-radius: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-    .art-details { padding: 1.5rem; display: flex; flex-direction: column; flex: 1; }
-    .art-details h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--primary); margin-bottom: 0.4rem; }
-    .art-meta { font-size: 0.82rem; font-weight: 600; color: var(--accent); margin-bottom: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px; }
-    .art-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.5; margin-bottom: 1rem; }
-    .art-tag-list { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: auto; }
-    .art-tag { background: #f1f5f9; color: var(--primary); font-size: 0.75rem; font-weight: 600; padding: 3px 8px; border-radius: 4px; }
-
-    /* Surveys Akordeon Kartları */
-    .survey-accordion {
-      background: #ffffff;
-      border: 1px solid #ECE7DE;
-      border-radius: 14px;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
-      overflow: hidden;
-    }
-    .survey-header {
-      padding: 1.5rem 2rem;
-      background: #f8fafc;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
-      color: var(--primary);
-      font-weight: 700;
-      transition: background 0.2s ease;
-    }
-    .survey-header:hover { background: #f1f5f9; }
-    .survey-content {
-      display: none;
+      text-align: center;
       padding: 1.5rem;
-      border-top: 1px solid #ECE7DE;
+      font-size: 0.9rem;
+      margin-top: auto;
     }
-    .form-iframe {
-      width: 100%;
-      height: 650px;
-      border: 1px solid #cbd5e1;
-      border-radius: 8px;
-      background: #f8fafc;
-    }
+  </style>
+</head>
+<body>
 
-    /* eSafety Canva Embed */
-    .canva-embed-container {
+  <!-- Navigasyon Menüsü -->
+  <nav>
+    <a class="brand" onclick="switchSection('home')">Living Statues & Sports</a>
+    <div class="nav-right">
+      <div class="nav-links">
+        <button class="nav-btn active" onclick="switchSection('home')">Home</button>
+        <button class="nav-btn" onclick="switchSection('about')">About</button>
+        <button class="nav-btn" onclick="switchSection('partners')">Partners</button>
+        <button class="nav-btn" onclick="switchSection('activities')">Activities</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HOME SECTION -->
+  <section id="home" class="page-section active">
+    <div class="hero-text-wrap">
+      <span class="badge">eTwinning International Project</span>
+      <h1 class="title">Living Statues: Iconography of Sports</h1>
+      <p class="subtitle">From Antiquity to Modern Era</p>
+    </div>
+    <div class="container" style="padding-top: 1.5rem;">
+      <div class="grid">
+        <div class="card">
+          <h3>Welcome to Our Project</h3>
+          <p>Exploring the historical bridge between classical art, sculpture iconography, and modern athletic disciplines through student-led creative performances and digital tools.</p>
+        </div>
+        <div class="card">
+          <h3>Project Goals</h3>
+          <p>To integrate sports history with digital storytelling, foster intercultural collaboration among European schools, and promote active citizenship and arts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="page-section">
+    <div class="container">
+      <div class="section-head">
+        <h2>About the Project</h2>
+        <p>Discover the core concepts and educational objectives behind our work.</p>
+      </div>
+      <div class="card">
+        <h3>Project Concept</h3>
+        <p>Students examine how sports and physical culture have been depicted through centuries in statues, pottery, and paintings. By recreating these poses as living statues, they connect historical iconography with physical education.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNERS SECTION -->
+  <section id="partners" class="page-section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Our Partners</h2>
+        <p>Collaborating schools across Europe.</p>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <h3>Haydarpaşa Lisesi</h3>
+          <p>Turkey / İstanbul</p>
+        </div>
+        <div class="card">
+          <h3>Partner Schools</h3>
+          <p>Schools from Romania, Serbia, Croatia, and Spain.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACTIVITIES SECTION -->
+  <section id="activities" class="page-section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Project Activities</h2>
+        <p>Step-by-step implementation milestones.</p>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <h3>Phase 1: Research & Iconography</h3>
+          <p>Students research ancient Greek and Roman sports statues.</p>
+        </div>
+        <div class="card">
+          <h3>Phase 2: Living Statue Performances</h3>
+          <p>Costuming and physical posture rehearsals depicting historical athletes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Living Statues: Iconography of Sports | eTwinning Project</p>
+  </footer>
+
+  <script>
+    function switchSection(sectionId) {
+      document.querySelectorAll('.page-section').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.querySelectorAll('.nav-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      document.getElementById(sectionId).classList.add('active');
+      event.target.classList.add('active');
+      window.scrollTo(0, 0);
+    }
+  </script>
+</body>
+</html>
