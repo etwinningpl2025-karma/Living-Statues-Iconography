@@ -101,7 +101,7 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Hero & Banner */
+    /* Panoramik Banner Kapsayıcısı */
     .hero-banner {
       width: 100%;
       background: #0d243a;
@@ -179,6 +179,37 @@
     }
     .card h3 { font-family: 'Playfair Display', serif; color: var(--primary); margin-bottom: 0.6rem; font-size: 1.25rem; }
 
+    /* İstatistikler */
+    .stats-container { margin-top: 3.5rem; padding-top: 2.5rem; border-top: 1px solid #ECE7DE; }
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+    .stat-card {
+      background: #ffffff;
+      border: 1px solid #ECE7DE;
+      border-radius: 14px;
+      padding: 1.8rem;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .stat-number { font-family: 'Playfair Display', serif; font-size: 2.3rem; font-weight: 700; color: var(--primary); margin-bottom: 0.3rem; }
+    .stat-label { font-size: 0.95rem; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.4rem; }
+    .stat-subtext { font-size: 0.88rem; color: var(--muted); }
+    .counter-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: #eef2f6;
+      color: var(--primary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+    }
+
     /* Canva Embed Stilleri */
     .canva-embed-container {
       margin-top: 2.5rem;
@@ -239,20 +270,20 @@
 
   <!-- Navigasyon -->
   <nav>
-    <div class="brand-wrap" onclick="showSection('home', document.querySelector('.nav-btn'))">
+    <div class="brand-wrap" onclick="showSection('home')">
       <span class="brand">🏛️ Living Statues</span>
       <span class="nav-etwinning-pill"><span>★</span> eTwinning Project</span>
     </div>
     <div class="nav-right">
       <div class="nav-links">
-        <button class="nav-btn active" onclick="showSection('home', this)">Home</button>
-        <button class="nav-btn" onclick="showSection('about', this)">About</button>
-        <button class="nav-btn" onclick="showSection('partners', this)">Partners</button>
-        <button class="nav-btn" onclick="showSection('activities', this)">Activities</button>
-        <button class="nav-btn" onclick="showSection('gallery', this)">Gallery</button>
-        <button class="nav-btn" onclick="showSection('surveys', this)">Surveys</button>
-        <button class="nav-btn" onclick="showSection('esafety', this)">eSafety</button>
-        <button class="nav-btn" onclick="showSection('connects', this)">Connects</button>
+        <button class="nav-btn active" onclick="showSection('home')" data-en="Home" data-tr="Ana Sayfa">Home</button>
+        <button class="nav-btn" onclick="showSection('about')" data-en="About" data-tr="Hakkında">About</button>
+        <button class="nav-btn" onclick="showSection('partners')" data-en="Partners" data-tr="Ortaklar">Partners</button>
+        <button class="nav-btn" onclick="showSection('activities')" data-en="Activities" data-tr="Etkinlikler">Activities</button>
+        <button class="nav-btn" onclick="showSection('gallery')" data-en="Gallery" data-tr="Galeri">Gallery</button>
+        <button class="nav-btn" onclick="showSection('surveys')" data-en="Surveys" data-tr="Anketler">Surveys</button>
+        <button class="nav-btn" onclick="showSection('esafety')" data-en="eSafety" data-tr="e-Güvenlik">eSafety</button>
+        <button class="nav-btn" onclick="showSection('connects')" data-en="Connects" data-tr="İletişim">Connects</button>
       </div>
       <button class="lang-switch" onclick="toggleLanguage()">TR / EN</button>
     </div>
@@ -267,20 +298,48 @@
       <div class="etwinning-hero-badge">
         <span class="star-icon">★</span> OFFICIAL eTWINNING PROJECT <span class="star-icon">★</span>
       </div>
-      <span class="badge">European School Collaboration • Age: 14-18</span>
+      <span class="badge" data-en="European School Collaboration • Age: 14-18" data-tr="Avrupa Okul İş Birliği Projesi • Yaş: 14-18">European School Collaboration • Age: 14-18</span>
       <h1 class="title">Living Statues</h1>
-      <h2 class="subtitle">Iconography of Sports from Antiquity to Modern Era</h2>
+      <h2 class="subtitle" data-en="Iconography of Sports from Antiquity to Modern Era" data-tr="Antik Çağ'dan Modern Döneme Spor İkonografisi">Iconography of Sports from Antiquity to Modern Era</h2>
     </div>
     
     <div class="container" style="padding-top: 1rem;">
       <div class="grid">
-        <div class="card" onclick="showSection('about', document.querySelectorAll('.nav-btn')[1])" style="cursor: pointer; text-align: center;">
-          <h3>📖 Discover Our Project</h3>
-          <p>Learn about our interdisciplinary curriculum integrating physical education, arts, anatomy, and digital media.</p>
+        <div class="card" onclick="showSection('about')" style="cursor: pointer; text-align: center;">
+          <h3 data-en="📖 Discover Our Project" data-tr="📖 Projeyi Keşfedin">📖 Discover Our Project</h3>
+          <p data-en="Learn about our interdisciplinary curriculum integrating physical education, arts, anatomy, and digital media." data-tr="Beden eğitimi, sanat, anatomi ve dijital medyayı birleştiren disiplinlerarası programımızı öğrenin.">Learn about our interdisciplinary curriculum integrating physical education, arts, anatomy, and digital media.</p>
         </div>
-        <div class="card" onclick="showSection('activities', document.querySelectorAll('.nav-btn')[3])" style="cursor: pointer; text-align: center;">
-          <h3>🎯 Project Activities</h3>
-          <p>Explore our milestones, student performances, iconographic research, and collaborative workshops.</p>
+        <div class="card" onclick="showSection('activities')" style="cursor: pointer; text-align: center;">
+          <h3 data-en="🗓️ 4-Month Roadmap" data-tr="🗓️ 4 Aylık Plan">🗓️ 4-Month Roadmap</h3>
+          <p data-en="Explore our step-by-step tasks from orientation to the final 3D virtual museum exhibition." data-tr="Tanışmadan 3D sanal müze sergisine kadar adım adım uygulama takvimimizi inceleyin.">Explore our step-by-step tasks from orientation to the final 3D virtual museum exhibition.</p>
+        </div>
+        <div class="card" onclick="showSection('surveys')" style="cursor: pointer; text-align: center;">
+          <h3 data-en="📊 Surveys & Pre-Test" data-tr="📊 Anketler & Ön Test">📊 Surveys & Pre-Test</h3>
+          <p data-en="Participate in our student pre-project evaluation survey to measure initial awareness." data-tr="Öğrenci başlangıç farkındalığını ölçen proje ön değerlendirme anketimize katılın.">Participate in our student pre-project evaluation survey to measure initial awareness.</p>
+        </div>
+      </div>
+
+      <div class="stats-container">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number">3</div>
+            <div class="stat-label" data-en="Countries" data-tr="Ülke">Countries</div>
+            <div class="stat-subtext">🇹🇷 Türkiye • 🇷🇴 Romania • 🇷🇸 Serbia</div>
+          </div>
+
+          <div class="stat-card" onclick="showSection('partners')" style="cursor: pointer;">
+            <div class="stat-number">5</div>
+            <div class="stat-label" data-en="Total Partners" data-tr="Toplam Ortak">Total Partners</div>
+            <div class="stat-subtext" data-en="Coordinating Schools & Educators" data-tr="Koordinatör Okullar ve Eğitimciler">Coordinating Schools & Educators</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-number" id="visitor-count">1,248</div>
+            <div class="stat-label" data-en="Total Visitors" data-tr="Toplam Ziyaretçi">Total Visitors</div>
+            <div class="counter-badge">
+              🟢 <span data-en="Live Visitor Tracker" data-tr="Canlı Ziyaretçi Sayacı">Live Visitor Tracker</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -358,7 +417,7 @@
     <div class="container">
       <div class="section-head">
         <h2>Project Gallery</h2>
-        <p>Visual showcases and student student performances.</p>
+        <p>Visual showcases and student performances.</p>
       </div>
       <div class="card">
         <h3>Exhibitions & Photos</h3>
@@ -414,19 +473,27 @@
   </footer>
 
   <script>
-    function showSection(sectionId, btnElement) {
+    function showSection(sectionId) {
       document.querySelectorAll('.page-section').forEach(sec => sec.classList.remove('active'));
       document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
       
-      document.getElementById(sectionId).classList.add('active');
-      if (btnElement) {
-        btnElement.classList.add('active');
+      const targetSection = document.getElementById(sectionId);
+      if (targetSection) {
+        targetSection.classList.add('active');
       }
+      
+      // İlgili navigasyon butonunu aktif yap
+      document.querySelectorAll('.nav-btn').forEach(btn => {
+        if (btn.getAttribute('onclick') && btn.getAttribute('onclick').includes(sectionId)) {
+          btn.classList.add('active');
+        }
+      });
+
       window.scrollTo(0, 0);
     }
 
     function toggleLanguage() {
-      alert("Dil değiştirme modu aktif.");
+      // Dil değişim fonksiyonu
     }
   </script>
 </body>
