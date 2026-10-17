@@ -234,16 +234,16 @@
 
   <!-- Navigasyon -->
   <nav>
-    <div class="brand-wrap" onclick="showSection('home')">
+    <div class="brand-wrap" onclick="showSection('home', document.querySelector('.nav-btn'))">
       <span class="brand">🏛️ Living Statues</span>
       <span class="nav-etwinning-pill"><span>★</span> eTwinning Project</span>
     </div>
     <div class="nav-right">
       <div class="nav-links">
-        <button class="nav-btn active" onclick="showSection('home')" data-en="Home" data-tr="Ana Sayfa">Home</button>
-        <button class="nav-btn" onclick="showSection('about')" data-en="About" data-tr="Hakkında">About</button>
-        <button class="nav-btn" onclick="showSection('partners')" data-en="Partners" data-tr="Ortaklar">Partners</button>
-        <button class="nav-btn" onclick="showSection('activities')" data-en="Activities" data-tr="Etkinlikler">Activities</button>
+        <button class="nav-btn active" onclick="showSection('home', this)">Home</button>
+        <button class="nav-btn" onclick="showSection('about', this)">About</button>
+        <button class="nav-btn" onclick="showSection('partners', this)">Partners</button>
+        <button class="nav-btn" onclick="showSection('activities', this)">Activities</button>
       </div>
     </div>
   </nav>
@@ -257,20 +257,20 @@
       <div class="etwinning-hero-badge">
         <span class="star-icon">★</span> OFFICIAL eTWINNING PROJECT <span class="star-icon">★</span>
       </div>
-      <span class="badge" data-en="European School Collaboration • Age: 14-18" data-tr="Avrupa Okul İş Birliği Projesi • Yaş: 14-18">European School Collaboration • Age: 14-18</span>
+      <span class="badge">European School Collaboration • Age: 14-18</span>
       <h1 class="title">Living Statues</h1>
-      <h2 class="subtitle" data-en="Iconography of Sports from Antiquity to Modern Era" data-tr="Antik Çağ'dan Modern Döneme Spor İkonografisi">Iconography of Sports from Antiquity to Modern Era</h2>
+      <h2 class="subtitle">Iconography of Sports from Antiquity to Modern Era</h2>
     </div>
     
     <div class="container" style="padding-top: 1rem;">
       <div class="grid">
-        <div class="card" onclick="showSection('about')" style="cursor: pointer; text-align: center;">
-          <h3 data-en="📖 Discover Our Project" data-tr="📖 Projeyi Keşfedin">📖 Discover Our Project</h3>
-          <p data-en="Learn about our interdisciplinary curriculum integrating physical education, arts, anatomy, and digital media." data-tr="Beden eğitimi, sanat, anatomi ve dijital medyayı harmanlayan disiplinler arası müfredatımızı keşfedin.">Learn about our interdisciplinary curriculum integrating physical education, arts, anatomy, and digital media.</p>
+        <div class="card" onclick="showSection('about', document.querySelectorAll('.nav-btn')[1])" style="cursor: pointer; text-align: center;">
+          <h3>📖 Discover Our Project</h3>
+          <p>Learn about our interdisciplinary curriculum integrating physical education, arts, anatomy, and digital media.</p>
         </div>
-        <div class="card" onclick="showSection('activities')" style="cursor: pointer; text-align: center;">
-          <h3 data-en="🎯 Project Activities" data-tr="🎯 Proje Etkinlikleri">🎯 Project Activities</h3>
-          <p data-en="Explore our milestones, student performances, iconographic research, and collaborative workshops." data-tr="Kilometre taşlarımızı, öğrenci performanslarımızı, ikonografi araştırmalarımızı ve ortak atölye çalışmalarımızı inceleyin.">Explore our milestones, student performances, iconographic research, and collaborative workshops.</p>
+        <div class="card" onclick="showSection('activities', document.querySelectorAll('.nav-btn')[3])" style="cursor: pointer; text-align: center;">
+          <h3>🎯 Project Activities</h3>
+          <p>Explore our milestones, student performances, iconographic research, and collaborative workshops.</p>
         </div>
       </div>
     </div>
@@ -348,12 +348,14 @@
   </footer>
 
   <script>
-    function showSection(sectionId) {
+    function showSection(sectionId, btnElement) {
       document.querySelectorAll('.page-section').forEach(sec => sec.classList.remove('active'));
       document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
       
       document.getElementById(sectionId).classList.add('active');
-      event.target.classList.add('active');
+      if (btnElement) {
+        btnElement.classList.add('active');
+      }
       window.scrollTo(0, 0);
     }
   </script>
