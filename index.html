@@ -349,3 +349,29 @@
       border: 1px solid #ECE7DE;
       box-shadow: 0 4px 12px rgba(0,0,0,0.03);
       display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .art-card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.06); }
+    .art-visual {
+      background: linear-gradient(135deg, #15375B 0%, #2a4365 100%);
+      color: #FDFBF7;
+      height: 190px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1.5rem;
+      position: relative;
+    }
+    .art-visual-icon { font-size: 2.6rem; margin-bottom: 0.4rem; }
+    .art-origin-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(197, 160, 89, 0.9);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding:
